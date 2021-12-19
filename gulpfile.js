@@ -7,15 +7,11 @@ const htmlbeautify = require("gulp-html-beautify");
 const autoprefixer = require("autoprefixer");
 const postcss = require("gulp-postcss");
 
-const paths = {
-    scss: "./src/style/scss/*.scss"
-};
-
 const PATH = {
-    HTML: "./src/html/templates",
-    ASSETS: {
-        STYLE: "./src/style/scss"
-    }
+    NUNJUCKS: "./src/html/templates",
+    HTML: "./src/html/dist",
+    SCSS: "./src/style/scss",
+    CSS: "./src/style/css"
 };
 
 const scssOptions = {
@@ -27,13 +23,12 @@ const scssOptions = {
 };
 
 gulp.task("scss:compile", function () {
-    return gulp
-        .src(paths.scss)
+    return gulp.src("src/style/scss/*")
         .pipe(sourcemaps.init())
         .pipe(scss(scssOptions).on("error", scss.logError))
         .pipe(postcss([autoprefixer()]))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest("./src/style/css"))
+        .pipe(gulp.dest(PATH.CSS))
         .pipe(browserSync.reload({
             stream: true
         }));
@@ -41,10 +36,10 @@ gulp.task("scss:compile", function () {
 
 
 gulp.task("nunjucks-html", function () {
-    return gulp.src("./src/html/templates/*")
+    return gulp.src("src/html/templates/*")
         .pipe(
             nunjucksRender({
-                path: [PATH.HTML]
+                path: [PATH.NUNJUCKS]
             })
         )
         .pipe(htmlbeautify({
@@ -69,7 +64,7 @@ gulp.task("nunjucks-html", function () {
             "wrap_attributes_indent_size": 4,
             "end_with_newline": false
         }))
-        .pipe(gulp.dest("./src/html/dist"))
+        .pipe(gulp.dest(PATH.HTML))
         .pipe(browserSync.reload({
             stream: true
         }));
@@ -79,18 +74,18 @@ gulp.task("browserSync", function () {
     return browserSync.init({
             port: 8000,
             server: {
-                baseDir: "./src/html/dist",
+                baseDir: PATH.HTML,
                 directory: true
             }
         }),
 
-        gulp.watch(paths.scss, gulp.series("scss:compile")),
-        gulp.watch(PATH.HTML, gulp.series("nunjucks-html"));
+        gulp.watch(PATH.SCSS, gulp.series("scss:compile")),
+        gulp.watch(PATH.NUNJUCKS, gulp.series("nunjucks-html"));
 });
 
 gulp.task("watch", function () {
-    gulp.watch(paths.scss, gulp.series("scss:compile"));
-    gulp.watch(PATH.HTML, gulp.series("nunjucks-html"));
+    gulp.watch(PATH.SCSS, gulp.series("scss:compile"));
+    gulp.watch(PATH.NUNJUCKS, gulp.series("nunjucks-html"));
 });
 
 gulp.task("default",

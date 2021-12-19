@@ -74,7 +74,7 @@ gulp.task("browserSync", function () {
     return browserSync.init({
             port: 8000,
             server: {
-                baseDir: PATH.HTML,
+                baseDir: "src/",
                 directory: true
             }
         }),

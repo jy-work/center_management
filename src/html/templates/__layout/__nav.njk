@@ -1,0 +1,61 @@
+{% set navList = [
+    {   
+        menu: "사용자 관리",
+        subList : [
+            {
+                title: "회원 관리",
+                content: ["회원 현황", "회원 가입 승인", "화이트·블랙 리스트 관리"]
+            },
+            {
+                title: "강사 관리",
+                content: ["강사 현황", "평가 관리 현황"]
+            }
+        ]
+    },
+    {   
+        menu: "서비스 관리",
+        subList : [
+            {
+                title: "스마트 컨텐츠 관리",
+                content: ["스마트 콘텐츠 대시보드", "스마트 콘텐츠 현황", "콘텐츠 관리", "디바이스 관리", "공간 관리"]
+            },
+            {
+                title: "스마트 클래스 관리",
+                content: ["스마트 클래스 대시보드", "스마트 클래스 현황", "클래스 실적 관리", "디바이스 관리", "공간 관리"]
+            },
+            {
+                title: "동아리 관리",
+                content: ["동아리 현황", "동아리 승인/폐지", "동아리 관리"]
+            },
+            {
+                title: "대관 관리",
+                content: ["대관 현황", "대관 공간 관리"]
+            }
+        ]
+    }
+]
+%}
+
+{% macro nav_list(items) %}
+    {% for item in items -%}
+        <li class="item_gnb">
+            <strong>{{item.menu}}</strong>
+            <div class="inner">
+                {% for subitem in item.subList -%}
+                <strong class="list_sub_title">{{ subitem.title }}</strong>
+                <ul class="nav">
+                    {% for content in subitem.content -%}
+                        <li>
+                            <a href="#">{{ content }}</a>
+                        </li>
+                    {%- endfor %}
+                </ul>
+                {%- endfor %}
+            </div>
+        </li>
+    {% endfor%}
+{% endmacro %}
+
+<ul class="list_gnb">
+    {{- nav_list(navList) -}}
+</ul>

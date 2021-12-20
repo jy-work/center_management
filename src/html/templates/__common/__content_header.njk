@@ -1,0 +1,9 @@
+{% macro contentHeader(tit="타이틀", path="경로>경로>경로") -%}
+    {% if tit=="" and path=="" -%}
+    {%- else -%}
+    <div class="content_header">
+        <h2 class="content_title">{{ tit }}</h2>
+        <div class="content_path">{{ path }}</div>
+    </div>
+    {%- endif %}
+{%- endmacro %}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="./../../style/css/ui_sample.css">
+</head>
+
+<body>
+
+
+
+	<h2>UI모음</h2>
+
+	<!-- Selectbox -->
+	<div class="wrap_ui">
+		<div class="wrap_uio sb">
+
+			<select id="sb" name="sb" vaule="선택">
+				<option>테스트</option>
+				<option>테스트2</option>
+			</select>
+		</div>
+	</div>
+
+	<!-- Search -->
+	<div class="wrap_ui">
+		<div class="wrap_uio search">
+			<label for="search">콘텐츠명</label>
+			<input type="text" id="search" name="search" />
+			<button type="button">
+				<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF">
+					<path d="M0 0h24v24H0z" fill="none" />
+					<path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+				</svg>
+				<span class="blind">검색</span>
+			</button>
+		</div>
+	</div>
+
+	<!-- input Text -->
+	<div class="wrap_ui">
+		<div class="wrap_uio txt">
+			<label for="">제목</label>
+			<input type="text" id="text" name="text" />
+		</div>
+	</div>
+	<div class="pagenation">
+		<div class="wrap_mv">
+			<a href="#" class="link"><span class="material-icons">chevron_left</span< /a>
+					<a href="#" class="link"><span class="material-icons">first_page</span></a>
+		</div>
+		<div class="wrap_pages">
+			<button type="button" class="more"><span class="material-icons">more_horiz</span></button>
+			<div class="pages">
+				<a href="#" class="link">36</a>
+				<a href="#" class="link">37</a>
+				<a href="#" class="link">38</a>
+				<a href="#" class="link">39</a>
+				<a href="#" class="link">40</a>
+			</div>
+			<button type="button" class="more"><span class="material-icons">more_horiz</span></button>
+		</div>
+		<div class="wrap_mv">
+			<a href="#" class="link"><span class="material-icons">chevron_right</span></a>
+			<a href="#" class="link"><span class="material-icons">last_page</span></a>
+		</div>
+	</div>
+
+</body>
+
+</html>

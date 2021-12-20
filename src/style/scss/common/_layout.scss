@@ -1,0 +1,16 @@
+html, body, .wrap {
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+    padding-top: 60px;
+    box-sizing: border-box;
+}
+
+.content {
+    padding: 20px;
+    box-sizing: border-box;
+    flex: 1;
+}

@@ -1,7 +1,14 @@
-body {
-    margin-top: 10px;
-    content: '';
-    display: block;
-    display: flex;
-    transform: translate(50%);
-}
+@charset "UTF-8";
+
+@import 'base/reset';
+@import 'base/variables';
+
+@import 'common/layout';
+@import 'common/header';
+@import 'common/nav';
+@import 'common/table';
+@import 'common/pagenation';
+@import 'common/uio';
+
+@import 'import/content_header';
+@import 'import/search_option';

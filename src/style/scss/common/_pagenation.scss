@@ -1,0 +1,49 @@
+.pagenation {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+
+    .wrap_mv {
+        border: 1px solid #ccc;
+
+        .link {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            vertical-align: top;
+
+            &:last-of-type {
+                margin-left: -4px;
+                border-left: 1px solid #ccc;
+            }
+
+            .material-icons {
+                font-size: 25px;
+            }
+        }
+    }
+
+    .wrap_pages {
+        display: flex;
+        margin: 0 25px;
+        border: 1px solid #ccc;
+        font-size: 12px;
+        line-height: 25px;
+        text-align: center;
+
+        .more, .link {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            vertical-align: top;
+
+            .material-icons {
+                font-size: 12px;
+            }
+        }
+
+        .more {
+            border: 0;
+        }
+    }
+}

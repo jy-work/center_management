@@ -1,0 +1,21 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    padding: 0 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(170, 170, 170, 0.35);
+
+    .logo {
+        margin-top: 5px;
+        .link {
+            display: block;
+            width: 200px;
+            height: 50px;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+}

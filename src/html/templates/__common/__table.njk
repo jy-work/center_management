@@ -1,0 +1,71 @@
+{% import "./__uio.njk" as ui %}
+<div class="wrap_table">
+    <div class="option_table">
+        <div class="info">
+            Total : <span class="highlight"></span>건 {{- ui.selectbox("", "list_num", "list_num", [10, 15, 20, 25]) -}}건씩 보기
+        </div>
+        <div class="control">
+            <button type="button" class="del">삭제</button>
+            <a class="add" href="#">등록</a>
+        </div>
+    </div>
+    <table class="content_table">
+        <caption><span class="blind">caption</span></caption>
+        <colgroup>
+            <col width="30px">
+            <col width="35px">
+            <col width="100px">
+            <col width="100px">
+            <col width="15%">
+            <col width="30%" class="title">
+            <col>
+            <col>
+            <col>
+            <col width="50px">
+            <col>
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col">{{- ui.inputCheckbox("선택","tr_select","select")-}}</th>
+                <th scope="col">NO</th>
+                <th scope="col">분류</th>
+                <th scope="col">콘텐츠 ID</th>
+                <th scope="col">콘텐츠명</th>
+                <th scope="col">제목</th>
+                <th scope="col">작성자 분류</th>
+                <th scope="col">작성자</th>
+                <th scope="col">작성일</th>
+                <th scope="col">조회</th>
+                <th scope="col">상태</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="select">
+                <td>{{- ui.inputCheckbox("선택","","select")-}}</td>
+                <td>2</td>
+                <td>공지사항</td>
+                <td>CO31110017</td>
+                <td>친구와 함께하는 AR체험</td>
+                <td>친구와 함께하는 AR체험 안내입니다. 친구와 함께하는 AR체험 안내입니다.</td>
+                <td>관리자</td>
+                <td>조정석</td>
+                <td>2021-12-16</td>
+                <td>12</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>{{- ui.inputCheckbox("선택","","select")-}}</td>
+                <td>1</td>
+                <td>후기</td>
+                <td>CO31110017</td>
+                <td>친구와 함께하는 AR체험</td>
+                <td>친구와 함께하는 AR체험 안내입니다.</td>
+                <td>준회원</td>
+                <td>조정석</td>
+                <td>2021-12-16</td>
+                <td>1</td>
+                <td>답변대기</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

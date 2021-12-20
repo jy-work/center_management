@@ -1,5 +1,10 @@
 {% extends "./__layout/layout.njk"%}
+{% import "./__common/__content_header.njk" as contentHeader %}
+{% import "./__common/__search_option.njk" as searchOption %}
 
-{% block contents %}
-contents
+{% block contents -%}
+    {{- contentHeader.contentHeader("스마트 콘텐츠 게시판", "홈 > 커뮤니티 관리 > 커뮤니티 게시판 > 스마트 콘텐츠 게시판" ) -}}
+    {{- searchOption.smartContentsBoard() }}
+    {%- include "./__common/__table.njk" -%}
+    {%- include "./__common/__pagenation.njk" -%}
 {% endblock %}

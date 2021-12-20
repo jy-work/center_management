@@ -1,0 +1,85 @@
+.wrap_table {
+    .content_table {
+        width: 100%;
+        margin-top: 5px;
+        border: 1px solid #aaa;
+        border-collapse: collapse;
+        table-layout: fixed;
+        font-size: 13px;
+
+        tr.select {
+            background-color: rgb(255, 199, 199);
+        }
+
+        th, td {
+            border: 1px solid #aaa;
+            padding: 10px 5px;
+            height: 10px;
+            text-align: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            .wrap_uio.cb {
+                > input {
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+        }
+
+        td:nth-of-type(6) {
+            text-align: left;
+        }
+    }
+
+    .option_table {
+        display: flex;
+        margin-top: 20px;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        .info {
+            display: flex;
+            font-size: 12px;
+            align-items: flex-end;
+            line-height: 18px;
+
+            .highlight {
+                color: $nav_sub;
+            }
+
+            .wrap_uio.sb {
+                border: 1px solid #ccc;
+                margin: 0 5px;
+
+                > select {
+                    height: 15px;
+                }
+            }
+        }
+
+        .control {
+            .del, .add {
+                display: inline-block;
+                width: 70px;
+                height: 25px;
+                border: 0;
+                border-radius: 4px;
+                color: #fff;
+                font-size: 12px;
+                line-height: 25px;
+                text-align: center;
+                vertical-align: top;
+            }
+
+            .del {
+                background-color: rgb(255, 149, 149);
+            }
+
+            .add {
+                background-color: $search_bg;
+            }
+        }
+    }
+}

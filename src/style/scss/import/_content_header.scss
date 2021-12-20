@@ -1,0 +1,16 @@
+.content_header {
+    display: flex;
+    height: 50px;
+    align-items: flex-end;
+    justify-content: space-between;
+    box-sizing: border-box;
+
+    .content_title {
+        font-size: 24px;
+    }
+
+    .content_path {
+        font-size: 11px;
+        color: #888;
+    }
+}

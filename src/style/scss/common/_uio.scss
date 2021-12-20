@@ -1,0 +1,34 @@
+.wrap_uio {
+    display: flex;
+    font-size: 12px;
+
+    > label {
+        margin-right: 10px;
+        line-height: 25px;
+        flex-shrink: 0;
+    }
+
+    > select {
+        cursor: pointer;
+    }
+
+    > select, > input {
+        height: 25px;
+        border: 0;
+        flex: 1;
+    }
+    
+    &.search {
+        button {
+            width: 25px;
+            height: 25px;
+            margin-left: 4px;
+            flex: 0;
+            cursor: pointer;
+        }
+    }
+
+    > button {
+        border: 0;
+    }
+}

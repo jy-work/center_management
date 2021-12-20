@@ -1,60 +1,349 @@
 {% set navList = [
-    {   
+    {
+        menu: "홈",
+        icon: "home",
+        subList: ""
+    }, {
         menu: "사용자 관리",
-        subList : [
+        icon: "person",
+        subList: [
             {
                 title: "회원 관리",
-                content: ["회원 현황", "회원 가입 승인", "화이트·블랙 리스트 관리"]
-            },
-            {
+                content: [
+                    {
+                        link: "#",
+                        text: "회원 현황"
+                    }, {
+                        link: "#",
+                        text: "회원 가입 승인"
+                    }, {
+                        link: "#",
+                        text: "화이트·블랙 리스트 관리"
+                    }
+                ]
+            }, {
                 title: "강사 관리",
-                content: ["강사 현황", "평가 관리 현황"]
+                content: [
+                    {
+                        link: "#",
+                        text: "강사 현황"
+                    }, {
+                        link: "#",
+                        text: "평가 관리 현황"
+                    }
+                ]
             }
         ]
-    },
-    {   
+    }, {
         menu: "서비스 관리",
-        subList : [
+        icon: "assignment_turned_in",
+        subList: [
             {
                 title: "스마트 컨텐츠 관리",
-                content: ["스마트 콘텐츠 대시보드", "스마트 콘텐츠 현황", "콘텐츠 관리", "디바이스 관리", "공간 관리"]
-            },
-            {
+                content: [
+                    {
+                        link: "#",
+                        text: "스마트 콘텐츠 대시보드"
+                    }, {
+                        link: "#",
+                        text: "스마트 콘텐츠 현황"
+                    }, {
+                        link: "#",
+                        text: "콘텐츠 관리"
+                    }, {
+                        link: "#",
+                        text: "디바이스 관리"
+                    }, {
+                        link: "#",
+                        text: "공간 관리"
+                    }
+                ]
+            }, {
                 title: "스마트 클래스 관리",
-                content: ["스마트 클래스 대시보드", "스마트 클래스 현황", "클래스 실적 관리", "디바이스 관리", "공간 관리"]
-            },
-            {
+                content: [
+                    {
+                        link: "#",
+                        text: "스마트 클래스 대시보드"
+                    }, {
+                        link: "#",
+                        text: "스마트 클래스 현황"
+                    }, {
+                        link: "#",
+                        text: "클래스 실적 관리"
+                    }, {
+                        link: "#",
+                        text: "디바이스 관리"
+                    }, {
+                        link: "#",
+                        text: "공간 관리"
+                    }
+                ]
+            }, {
                 title: "동아리 관리",
-                content: ["동아리 현황", "동아리 승인/폐지", "동아리 관리"]
-            },
-            {
+                content: [
+                    {
+                        link: "#",
+                        text: "동아리 현황"
+                    }, {
+                        link: "#",
+                        text: "동아리 승인/폐지"
+                    }, {
+                        link: "#",
+                        text: "동아리 관리"
+                    }
+                ]
+            }, {
                 title: "대관 관리",
-                content: ["대관 현황", "대관 공간 관리"]
+                content: [
+                    {
+                        link: "#",
+                        text: "대관 현황"
+                    }, {
+                        link: "#",
+                        text: "대관 공간 관리"
+                    }
+                ]
+            }
+        ]
+    }, {
+        menu: "예약 관리",
+        icon: "event_available",
+        subList: [
+            {
+                title: "스마트 컨텐츠 예약 관리",
+                content: [
+                    {
+                        link: "#",
+                        text: "예약 관리"
+                    }, {
+                        link: "#",
+                        text: "이용자 현황"
+                    }, {
+                        link: "#",
+                        text: "결제 현황 관리"
+                    }
+                ]
+            }, {
+                title: "스마트 클래스 예약 관리",
+                content: [
+                    {
+                        link: "#",
+                        text: "스마트 클래스 예약 관리"
+                    }, {
+                        link: "#",
+                        text: "스마트 클래스 수강 현황"
+                    }, {
+                        link: "#",
+                        text: "콘텐츠 관리"
+                    }, {
+                        link: "#",
+                        text: "결제 현황 관리"
+                    }
+                ]
+            }, {
+                title: "동아리 예약 관리",
+                content: [
+                    {
+                        link: "#",
+                        text: "동아리 가입/탈퇴 신청"
+                    }
+                ]
+            }, {
+                title: "대관 예약 관리",
+                content: [
+                    {
+                        link: "#",
+                        text: "대관 예약 신청 관리"
+                    }
+                ]
+            }
+        ]
+    }, {
+        menu: "커뮤니티 관리",
+        icon: "question_answer",
+        subList: [
+            {
+                title: "공지 사항",
+                content: [
+                    {
+                        link: "#",
+                        text: "시스템/서비스 공지"
+                    }, {
+                        link: "#",
+                        text: "강사 공지"
+                    }, {
+                        link: "#",
+                        text: "회원 공지"
+                    }, {
+                        link: "#",
+                        text: "뉴스"
+                    }, {
+                        link: "#",
+                        text: "FAQ"
+                    }, {
+                        link: "#",
+                        text: "이용안내"
+                    }
+                ]
+            }, {
+                title: "커뮤니티 게시판",
+                content: [
+                    {
+                        link: "#",
+                        text: "스마트 콘텐츠 게시판"
+                    }, {
+                        link: "#",
+                        text: "스마트 클래스 게시판"
+                    }, {
+                        link: "#",
+                        text: "동호회 게시판"
+                    }, {
+                        link: "#",
+                        text: "대관 문의 게시판"
+                    }, {
+                        link: "#",
+                        text: "쪽지 관리"
+                    }
+                ]
+            }, {
+                title: "평가 댓글 관리",
+                content: [
+                    {
+                        link: "#",
+                        text: "스마트 콘텐츠 평가"
+                    }, {
+                        link: "#",
+                        text: "스마트 클래스 평가"
+                    }, {
+                        link: "#",
+                        text: "강사 평가"
+                    }, {
+                        link: "#",
+                        text: "수강생 평가"
+                    }
+                ]
+            }
+        ]
+    }, {
+        menu: "서비스 통계",
+        icon: "signal_cellular_alt",
+        subList: [
+            {
+                title: "사용자 이용 통계",
+                content: [
+                    {
+                        link: "#",
+                        text: "기관별 사용자 이용 통계"
+                    }, {
+                        link: "#",
+                        text: "기간/시간대별 이용 통계"
+                    }, {
+                        link: "#",
+                        text: "서비스별 이용 통계"
+                    }, {
+                        link: "#",
+                        text: "서비스별 예약 통계"
+                    }, {
+                        link: "#",
+                        text: "사용자 리포트"
+                    }
+                ]
+            }, {
+                title: "서비스 통계",
+                content: [
+                    {
+                        link: "#",
+                        text: "서비스별 통계"
+                    }, {
+                        link: "#",
+                        text: "디바이스 관리 통계"
+                    }, {
+                        link: "#",
+                        text: "공간 관리 통계"
+                    }
+                ]
+            }, {
+                title: "매출 통계",
+                content: [
+                    {
+                        link: "#",
+                        text: "기관별 매출 통계"
+                    }, {
+                        link: "#",
+                        text: "기간/시간대별 매출 통계"
+                    }, {
+                        link: "#",
+                        text: "서비스별 매출 통계"
+                    }, {
+                        link: "#",
+                        text: "매출 리포트"
+                    }
+                ]
+            }
+        ]
+    }, {
+        menu: "시스템 관리",
+        icon: "settings",
+        subList: [
+            {
+                title: "기관 관리",
+                content: [
+                    {
+                        link: "#",
+                        text: "기관 현황"
+                    }
+                ]
+            }, {
+                title: "관리자 권한 관리",
+                content: [
+                    {
+                        link: "#",
+                        text: "관리자 현황"
+                    }
+                ]
+            }, {
+                title: "코드 관리",
+                content: [
+                    {
+                        link: "#",
+                        text: "카테고리 코드 관리"
+                    }, {
+                        link: "#",
+                        text: "공간 코드 관리"
+                    }, {
+                        link: "#",
+                        text: "디바이스 코드 관리"
+                    }
+                ]
             }
         ]
     }
-]
-%}
+] %}
 
-{% macro nav_list(items) %}
+{%- macro nav_list(items) %}
     {% for item in items -%}
         <li class="item_gnb">
-            <strong>{{item.menu}}</strong>
-            <div class="inner">
+            <a href="#" class="btn_gnb">
+                <span class="material-icons">{{ item.icon }}</span>{{item.menu}}
+            </a>
+            {% if item.subList=="" -%}
+            {%- else -%}
+            <div class="inner_gnb">
                 {% for subitem in item.subList -%}
-                <strong class="list_sub_title">{{ subitem.title }}</strong>
-                <ul class="nav">
-                    {% for content in subitem.content -%}
-                        <li>
-                            <a href="#">{{ content }}</a>
-                        </li>
-                    {%- endfor %}
-                </ul>
+                    <strong class="list_sub_title">{{ subitem.title }}</strong>
+                    <ul class="list_sub">
+                        {% for content in subitem.content -%}
+                            <li class="item_sub">
+                                <a href="{{content.link}}" class="link">{{ content.text }}</a>
+                            </li>
+                        {%- endfor %}
+                    </ul>
                 {%- endfor %}
             </div>
+            {%- endif %}
         </li>
     {% endfor%}
-{% endmacro %}
+{% endmacro -%}
 
 <ul class="list_gnb">
     {{- nav_list(navList) -}}

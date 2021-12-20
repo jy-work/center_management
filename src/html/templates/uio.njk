@@ -1,47 +1,46 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="stylesheet" type="text/css" href="./../../style/css/ui_sample.css">
-</head>
-    <body>
-    {% import "./__common/__uio.njk" as ui %}
+{% extends "./__layout/layout.njk"%}
+{% import "./__common/__uio.njk" as ui %}
 
-    {% block contents %}
-        <h2>UI모음</h2>
+{% block style %}
+.wrap_uio {
+    margin-top: 10px;
+}
 
-        <!-- Selectbox -->
-        <div class="wrap_ui">
-            {{- ui.selectbox(
-                "",
-                "sb",
-                "sb",
-                ["테스트", "테스트2"]
-            )-}}
-        </div>
+.content {
+    background-color: #fff;
+}
+{% endblock %}
 
-        <!-- Search -->
-        <div class="wrap_ui">
-            {{- ui.search(
-                "콘텐츠명",
-                "search",
-                "search"
-            )-}}
-        </div>
+{% block contents %}
+    <h2>UI모음</h2>
 
-        <!-- input Text -->
-        <div class="wrap_ui">
-            {{- ui.inputText(
-                "제목",
-                "text",
-                "text"
-            )-}}
-        </div>
+    <!-- Selectbox -->
+    <div class="wrap_ui">
+        {{- ui.selectbox(
+            "",
+            "sb",
+            "sb",
+            ["테스트", "테스트2"]
+        )-}}
+    </div>
 
-        {%- include "./__common/__pagenation.njk" %}
-    {% endblock %}
-    </body>
-</html>
+    <!-- Search -->
+    <div class="wrap_ui">
+        {{- ui.search(
+            "콘텐츠명",
+            "search",
+            "search"
+        )-}}
+    </div>
+
+    <!-- input Text -->
+    <div class="wrap_ui">
+        {{- ui.inputText(
+            "제목",
+            "text",
+            "text"
+        )-}}
+    </div>
+
+    {%- include "./__common/__pagenation.njk" %}
+{% endblock %}

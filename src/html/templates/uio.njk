@@ -17,28 +17,28 @@
     <!-- Selectbox -->
     <div class="wrap_ui">
         {{- ui.selectbox(
-            "",
-            "sb",
-            "sb",
-            ["테스트", "테스트2"]
+            label = "라벨영역",
+            id = "sb",
+            name = "sb",
+            options = ["테스트", "테스트2"]
         )-}}
     </div>
 
     <!-- Search -->
     <div class="wrap_ui">
         {{- ui.search(
-            "콘텐츠명",
-            "search",
-            "search"
+            label = "콘텐츠명",
+            id = "search",
+            name = "search"
         )-}}
     </div>
 
     <!-- input Text -->
     <div class="wrap_ui">
         {{- ui.inputText(
-            "제목",
-            "text",
-            "text"
+            label = "제목",
+            id = "text",
+            name = "text"
         )-}}
     </div>
 

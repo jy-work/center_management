@@ -1,15 +1,20 @@
 {% import "./__uio.njk" as uio %}
 
 {%- macro smartContentsBoard() %}
-<form>
-    <div class="wrap_search_option">
-        {{- uio.selectbox("분류", "subject", "subject", ["공지사항", "후기", "질문(Q&A)", "불만있어요", "요청사항", "자유게시판"]) -}}
-        {{- uio.search("콘텐츠명", "search", "content_name") -}}
-        {{- uio.inputText("제목", "title", "title") -}}
-        {{- uio.selectbox("작성자 분류", "subject_writer", "subject_writer", ["정회원", "준회원", "비회원", "강사", "관리자"]) -}}
-        {{- uio.inputText("작성자", "writer", "writer") -}}
-        {{- uio.selectbox("상태", "status", "status", ["답변대기", "답변완료", "기타"]) -}}
-        <button type="submit" class="btn_search">검색</button>
-    </div>
-</form>
+    <form>
+        <div class="wrap_search_option">
+            {{- uio.selectbox(
+                label = "분류", 
+                id = "subject",
+                name = "subject",
+                options = ["공지사항", "후기", "질문(Q&A)", "불만있어요", "요청사항", "자유게시판"]
+            )-}}
+            {{- uio.search("콘텐츠명", "search", "content_name") -}}
+            {{- uio.inputText("제목", "title", "title") -}}
+            {{- uio.selectbox("작성자 분류", "subject_writer", "subject_writer", ["정회원", "준회원", "비회원", "강사", "관리자"]) -}}
+            {{- uio.inputText("작성자", "writer", "writer") -}}
+            {{- uio.selectbox("상태", "status", "status", ["답변대기", "답변완료", "기타"]) -}}
+            <button type="submit" class="btn_search">검색</button>
+        </div>
+    </form>
 {% endmacro -%}

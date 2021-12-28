@@ -13,7 +13,12 @@ body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,input,legend,li,ol,p,select
 }
 
 button {
-    background-color: transparent
+    background-color: transparent;
+    cursor: pointer;
+
+    &:disabled {
+        cursor: default;
+    }
 }
 
 fieldset,img {
@@ -51,4 +56,8 @@ mark {
 
 i {
     font-style: normal
+}
+
+svg {
+    vertical-align: top;
 }

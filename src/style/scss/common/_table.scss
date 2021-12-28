@@ -1,15 +1,10 @@
 .wrap_table {
-    .content_table {
+    table {
         width: 100%;
-        margin-top: 5px;
         border: 1px solid #aaa;
         border-collapse: collapse;
         table-layout: fixed;
         font-size: 13px;
-
-        tr.select {
-            background-color: rgb(255, 199, 199);
-        }
 
         th, td {
             border: 1px solid #aaa;
@@ -19,17 +14,39 @@
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+        }
+    }
 
-            .wrap_uio.cb {
-                > input {
-                    width: 16px;
-                    height: 16px;
-                }
-            }
+    table.smart_content_board {
+        margin-top: 5px;
+
+        th {
+            background-color: #ddd;
         }
 
         td:nth-of-type(6) {
             text-align: left;
+        }
+    }
+
+    table.smart_content_list {
+        font-size: 12px;
+
+        th {
+            background-color: #dfdfdf;
+            color: $search_bg;
+        }
+
+        .label_status {
+            display: inline-block;
+            padding: 4px;
+            background-color: $status_approval;
+            border-radius: 2px;
+            vertical-align: top;
+
+            &.disabled {
+                background-color: $status_disabled;
+            }
         }
     }
 
@@ -46,16 +63,17 @@
             line-height: 18px;
 
             .highlight {
+                font-weight: bolder;
                 color: $nav_sub;
             }
+        }
 
-            .wrap_uio.sb {
-                border: 1px solid #ccc;
-                margin: 0 5px;
+        .wrap_uio.sb {
+            margin-left: 10px;
 
-                > select {
-                    height: 15px;
-                }
+            > select {
+                height: 18px;
+                margin-right: 3px;
             }
         }
 
@@ -80,6 +98,27 @@
             .add {
                 background-color: $search_bg;
             }
+        }
+    }
+
+    .class_teaching_list {
+        font-size: 12px;
+
+        th {
+            background-color: #dfdfdf;
+            color: $search_bg;
+        }
+    }
+
+    .typeA {
+        tbody tr.select {
+            background-color: rgb(255, 199, 199);
+        }
+    }
+
+    .typeB {
+        tbody tr.select {
+            background-color: rgb(198, 242, 255);
         }
     }
 }

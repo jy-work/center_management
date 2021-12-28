@@ -1,4 +1,5 @@
 html, body, .wrap {
+    min-height: 100%;
     height: 100%;
 }
 
@@ -14,6 +15,7 @@ body {
 }
 
 .content {
+    max-width: 1200px;
     padding: 20px;
     box-sizing: border-box;
     flex: 1;

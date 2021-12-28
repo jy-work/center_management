@@ -1,0 +1,329 @@
+{% extends "./__layout/layout.njk"%}
+{% block pageTitle %}강사 현황{% endblock %}
+{% import "./__common/__content_header.njk" as contentHeader %}
+{% import "./__common/__uio.njk" as ui %}
+
+{% block content -%}
+    {{- contentHeader.contentHeader(tit="강사 현황", path="홈 > 사용자 관리 > 강사 관리 > 강사 현황" ) -}}
+    <form>
+        <div class="search_option smart_content_state">
+            {{- ui.inputType(
+                label = "강사 ID", 
+                id = "teacherID", 
+                name = "teacherID") -}}
+
+            {{- ui.inputType(
+                label = "콘텐츠 명", 
+                id = "teacherName", 
+                name = "teacherID") -}}
+
+            {{- ui.inputType(
+                label = "휴대전화", 
+                id = "teacherCall", 
+                name = "teacherCall") -}}
+
+            {{- ui.selectbox(
+                label = "상태", 
+                id = "teacherState",
+                name = "teacherState",
+                options = ["선택", "승인", "승인대기", "승인취소"]
+            )-}}
+
+            {{- ui.btn(value="검색", class="btn_search", width="80px") -}}
+        </div>
+    </form>
+    <section class="search_result">
+        <div class="section_inner">
+            <form>
+                <div class="top_area">
+                    {{- ui.btn(value="이메일", class="btn_action", width="80px") -}}
+                    {{- ui.btn(value="쪽지", class="btn_action", width="80px") -}}
+                    {{- ui.btn(type="submit", value="등록", class="btn_submit", width="80px") -}}
+                </div>
+                <div class="section_content">
+                    <div class="wrap_table">
+                        <table class="smart_content_list typeB">
+                            <caption><span class="blind">강사현황 테이블</span></caption>
+                            <colgroup>
+                                <col width="30px">
+                                <col>
+                                <col>
+                                <col width="35px">
+                                <col>
+                                <col width="80px">
+                                <col width="80px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">
+                                        {{- ui.inputType(
+                                            type = "checkbox",
+                                            id = "cbLabel",
+                                            name = "cbLabel"
+                                        )-}}
+                                    </th>
+                                    <th scope="col">회원 ID</th>
+                                    <th scope="col">회원명</th>
+                                    <th scope="col">나이</th>
+                                    <th scope="col">휴대전화</th>
+                                    <th scope="col">내·외국인<br>여부</th>
+                                    <th scope="col">상태</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="select">
+                                    <td>
+                                        {{- ui.inputType(
+                                            type = "checkbox",
+                                            id = "cbLabel3",
+                                            name = "cbLabel"
+                                        )-}}
+                                    </td>
+                                    <td>M102304</td>
+                                    <td>Tom Holland</td>
+                                    <td>26</td>
+                                    <td>010-1234-1234</td>
+                                    <td>외국인</td>
+                                    <td><span class="label_status">승인</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        {{- ui.inputType(
+                                            type = "checkbox",
+                                            id = "cbLabel2",
+                                            name = "cbLabel"
+                                        )-}}
+                                    </td>
+                                    <td>M132134</td>
+                                    <td>유진실</td>
+                                    <td>33</td>
+                                    <td>010-2233-1234</td>
+                                    <td>내국인</td>
+                                    <td><span class="label_status">승인</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        {{- ui.inputType(
+                                            type = "checkbox",
+                                            id = "cbLabel1",
+                                            name = "cbLabel"
+                                        )-}}
+                                    </td>
+                                    <td>M201334</td>
+                                    <td>서은선</td>
+                                    <td>22</td>
+                                    <td>010-2233-4142</td>
+                                    <td>내국인</td>
+                                    <td><span class="label_status disabled">승인대기</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="section_inner">
+            <form>
+                <div class="top_area">
+                </div>
+                <div class="section_content">
+                    <div class="grid_wrap teacher_state">
+                        <div class="griditem_img_area">이미지 영역</div>
+                        <div class="griditem">
+                            {{- ui.inputShowType(
+                                label = "회원 ID",
+                                id = "userId",
+                                name = "userId",
+                                value = "M102304"
+                            )-}}
+                        </div>
+                        <div class="griditem">
+                            {{- ui.inputShowType(
+                                label = "내·외국인 여부",
+                                id = "checkForeigner",
+                                name = "checkForeigner",
+                                value = "외국인"
+                            )-}}
+                        </div>
+                        <div class="griditem_status_area">
+                            <div class="label">상태</div>
+                            {{- ui.btn(
+                                value="승인",
+                                class="toggle_status",
+                                disabled=true
+                            )-}}
+                        </div>
+                        <div class="griditem">
+                            {{- ui.inputShowType(
+                                label = "성(Last Name)",
+                                id = "lastName",
+                                name = "lastName",
+                                value = "Holland"
+                            )-}}
+                        </div>
+                        <div class="griditem">
+                            {{- ui.inputShowType(
+                                label = "이름(First Name)",
+                                id = "firstName",
+                                name = "firstName",
+                                value = "Tom"
+                            )-}}
+                        </div>
+                        <div class="griditem">
+                            {{- ui.inputShowType(
+                                label = "생년월일",
+                                id = "birth",
+                                name = "birth",
+                                value = "1996.06.01"
+                            )-}}
+                        </div>
+                        <div class="griditem">
+                            {{- ui.inputShowType(
+                                label = "성별",
+                                id = "gender",
+                                name = "gender",
+                                value = "남"
+                            )-}}
+                        </div>
+                        <div class="griditem_adress_area">
+                            {{- ui.inputShowType(
+                                label = "주소",
+                                id = "address",
+                                name = "address",
+                                value = "서울특별시 용산구 녹사평대로 150 노웨어소프트아파트 101동 1206호"
+                            )-}}
+                        </div>
+                    </div>
+                    <div class="grid_wrap teacher_state_sub">
+                        <div class="griditem">
+                            {{- ui.inputShowType(
+                                label = "휴대전화",
+                                id = "call",
+                                name = "call",
+                                value = "010-5630-9110"
+                            )-}}
+                        </div>
+                        <div class="griditem">
+                            {{- ui.inputShowType(
+                                label = "비상 연락처",
+                                id = "callEmergency",
+                                name = "callEmergency",
+                                value = "010-1321-4514"
+                            )-}}
+                        </div>
+                        <div class="griditem">
+                            {{- ui.inputShowType(
+                                label = "이메일",
+                                id = "email",
+                                name = "email",
+                                value = "holland_2519@gmail.com"
+                            )-}}
+                        </div>
+                        <div class="griditem">
+                            {{- ui.inputShowType(
+                                label = "강사 신청일",
+                                id = "requestDate",
+                                name = "requestDate",
+                                value = "2021-12-02 09:42"
+                            )-}}
+                        </div>
+                        <div class="griditem">
+                            {{- ui.inputShowType(
+                                label = "강사 승인일",
+                                id = "approvalDate",
+                                name = "approvalDate",
+                                value = "2021-12-04 10:22"
+                            )-}}
+                        </div>
+                        <div class="griditem">
+                            {{- ui.inputShowType(
+                                label = "최근 접속일",
+                                id = "loginDate",
+                                name = "loginDate",
+                                value = "2021-12-20 10:22"
+                            )-}}
+                        </div>
+                        <div class="griditem">
+                            {{- ui.inputShowType(
+                                label = "외국인 등록번호",
+                                id = "foreignerNum",
+                                name = "foreignerNum",
+                                value = "123456-7890123"
+                            )-}}
+                        </div>
+                        <div class="griditem">
+                            {{- ui.inputShowType(
+                                label = "여권번호",
+                                id = "passport",
+                                name = "passport",
+                                value = "U123A4567"
+                            )-}}
+                        </div>
+                        <div class="griditem">
+                            {{- ui.inputShowType(
+                                label = "국적",
+                                id = "nationality",
+                                name = "nationality",
+                                value = "영국"
+                            )-}}
+                        </div>
+                        <div class="griditem">
+                            {{- ui.inputShowType(
+                                label = "입국자격",
+                                id = "visa",
+                                name = "visa",
+                                value = "방문취업(H-2)"
+                            )-}}
+                        </div>
+                        <div class="griditem">
+                            {{- ui.inputShowType(
+                                label = "체류기간",
+                                id = "stay",
+                                name = "stay",
+                                value = "2022-06-09"
+                            )-}}
+                        </div>
+                    </div>
+                    <div class="wrap_table">
+                        <div class="summary">클래스 강의내역</div>
+                        <table class="class_teaching_list">
+                            <caption><span class="blind">클래스 강의내역 테이블</span></caption>
+                            <colgroup>
+                                <col width="150px">
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">클래스명</th>
+                                    <th scope="col">소개</th>
+                                    <th scope="col">종료일</th>
+                                    <th scope="col">담당강사</th>
+                                    <th scope="col">상태</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="select">
+                                    <td>메타버스 저작솔루션 교육</td>
+                                    <td>2021-12-01</td>
+                                    <td>2021-12-31</td>
+                                    <td>방시혁</td>
+                                    <td>수강중</td>
+                                </tr>
+                                <tr>
+                                    <td>쉽게 배우는 영상편집</td>
+                                    <td>2021-11-01</td>
+                                    <td>2021-11-31</td>
+                                    <td>이수민</td>
+                                    <td>수강완료</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+{% endblock %}

@@ -1,34 +1,87 @@
 .wrap_uio {
     display: flex;
-    font-size: 12px;
+    font-size: $labelFontSize;
+    height: inherit;
+    line-height: inherit;
 
     > label {
         margin-right: 10px;
-        line-height: 25px;
+        width: 20%;
+        text-align: right;
         flex-shrink: 0;
+        line-height: $labelLineHeight;
+
+        &:empty {
+            display: none;
+        }
     }
 
     > select {
         cursor: pointer;
-    }
-
-    > select, > input {
+        height: $sizeSelect;
         border: 1px solid #ccc;
-        height: 25px;
         flex: 1;
     }
+
+    > input[type="text"] {
+        height: $sizeInputText;
+        border: 1px solid #ccc;
+        flex: 1;
+        padding: 4px;
+        box-sizing: border-box;
+    }
+
     
-    &.search {
-        button {
-            width: 25px;
-            height: 25px;
-            margin-left: 4px;
-            flex: 0;
-            cursor: pointer;
-        }
+    > input[type="text"] + button {
+        width: $sizeSearchBtn;
+        height: $sizeSearchBtn;
+        margin-left: 4px;
+        flex: 0;
+        cursor: pointer;
     }
 
     > button {
         border: 0;
+    }
+
+    &.cb, &.rd {
+        label {
+            width: auto;
+            margin-right: 4px;
+
+            & + input[type="checkbox"], & + input[type="radio"] {
+                margin-top: calc(($sizeInputText - $sizeCb)/2);
+            }
+        }
+
+        input[type="checkbox"], input[type="radio"] {
+            width: $sizeCb;
+            height: $sizeCb;
+        }
+    }
+
+    &.show_text, &.show_text_area {
+        flex-direction: column;
+        
+        label {
+            width: 100%;
+            text-align: left;
+            white-space: nowrap;
+        }
+    }
+
+    &.show_text {
+        input[type="text"]:disabled {
+            background-color: #ddd;
+        }
+    }
+
+    &.show_text_area {
+        textarea {
+            border-color: #ccc;
+            padding: 5px;
+            resize: none;
+            height: 80px;
+        }
     }
 }

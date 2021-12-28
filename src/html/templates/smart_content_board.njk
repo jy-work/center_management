@@ -1,10 +1,157 @@
 {% extends "./__layout/layout.njk"%}
+{% block pageTitle %}스마트 콘텐츠 게시판{% endblock %}
 {% import "./__common/__content_header.njk" as contentHeader %}
-{% import "./__common/__search_option.njk" as searchOption %}
+{% import "./__common/__uio.njk" as ui %}
 
-{% block contents -%}
-    {{- contentHeader.contentHeader("스마트 콘텐츠 게시판", "홈 > 커뮤니티 관리 > 커뮤니티 게시판 > 스마트 콘텐츠 게시판" ) -}}
-    {{- searchOption.smartContentsBoard() }}
-    {%- include "./__common/__table.njk" -%}
+{% block content -%}
+    {{- contentHeader.contentHeader(tit = "스마트 콘텐츠 게시판", path = "홈 > 커뮤니티 관리 > 커뮤니티 게시판 > 스마트 콘텐츠 게시판" ) -}}
+    <form>
+        <div class="search_option smart_content_board">
+            {{- ui.selectbox(
+                label = "분류", 
+                id = "subject",
+                name = "subject",
+                options = ["공지사항", "후기", "질문(Q&A)", "불만있어요", "요청사항", "자유게시판"]
+            )-}}
+
+            {{- ui.inputType(
+                label = "콘텐츠명", 
+                id = "title", 
+                name = "title",
+                search = true ) -}}
+
+            {{- ui.inputType(
+                label = "제목", 
+                id = "title", 
+                name = "title") -}}
+
+            {{- ui.selectbox(
+                label = "작성자 분류", 
+                id = "subject_writer", 
+                name = "subject_writer", 
+                options = ["정회원", "준회원", "비회원", "강사", "관리자"]) -}}
+
+            {{- ui.inputType(
+                label = "작성자", 
+                id = "writer", 
+                name = "writer") -}}
+            
+            <div>
+                {{- ui.selectbox(
+                    label = "상태", 
+                    id = "status", 
+                    name = "status", 
+                    options = ["답변대기", "답변완료", "기타"]) -}}
+                {{- ui.btn(value="검색", class="btn_search", width="100px") -}}
+            </div>
+        </div>
+    </form>
+    <div class="wrap_table">
+        <div class="option_table">
+            <div class="info">
+                Total: <span class="highlight">245</span>건 {{- ui.selectbox(id="list_num", name="list_num", options=[10, 15, 20, 25]) -}}건씩 보기
+            </div>
+            <div class="control">
+                {{- ui.btn(value="삭제", class="del") -}}
+                {{- ui.btn(value="등록", class="add") -}}
+            </div>
+        </div>
+        <table class="smart_content_board typeA">
+            <caption><span class="blind">스마트 콘텐츠 게시판 테이블</span></caption>
+            <colgroup>
+                <col width="30px">
+                <col width="35px">
+                <col width="100px">
+                <col width="100px">
+                <col width="15%">
+                <col width="30%" class="title">
+                <col width="80px">
+                <col>
+                <col width="100px">
+                <col width="50px">
+                <col>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col">
+                        {{- ui.inputType(
+                            type = "checkbox",
+                            id = "cbLabel",
+                            name = "cbLabel"
+                        )-}}
+                    </th>
+                    <th scope="col">NO</th>
+                    <th scope="col">분류</th>
+                    <th scope="col">콘텐츠 ID</th>
+                    <th scope="col">콘텐츠명</th>
+                    <th scope="col">제목</th>
+                    <th scope="col">작성자 분류</th>
+                    <th scope="col">작성자</th>
+                    <th scope="col">작성일</th>
+                    <th scope="col">조회</th>
+                    <th scope="col">상태</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="select">
+                    <td>
+                        {{- ui.inputType(
+                            type = "checkbox",
+                            id = "cbLabel",
+                            name = "cbLabel"
+                        )-}}
+                    </td>
+                    <td>3</td>
+                    <td>공지사항</td>
+                    <td>CO31110017</td>
+                    <td>친구와 함께하는 AR체험</td>
+                    <td>친구와 함께하는 AR체험 안내입니다. 친구와 함께하는 AR체험 안내입니다.</td>
+                    <td>관리자</td>
+                    <td>조정석</td>
+                    <td>2021-12-16</td>
+                    <td>12</td>
+                    <td></td>
+                </tr>
+                                <tr>
+                    <td>
+                        {{- ui.inputType(
+                            type = "checkbox",
+                            id = "cbLabel",
+                            name = "cbLabel"
+                        )-}}
+                    </td>
+                    <td>2</td>
+                    <td>후기</td>
+                    <td>CO31110017</td>
+                    <td>친구와 함께하는 AR체험</td>
+                    <td>친구와 함께하는 AR체험 안내입니다.</td>
+                    <td>준회원</td>
+                    <td>조정석</td>
+                    <td>2021-12-16</td>
+                    <td>1</td>
+                    <td>답변대기</td>
+                </tr>
+                <tr>
+                    <td>
+                        {{- ui.inputType(
+                            type = "checkbox",
+                            id = "cbLabel",
+                            name = "cbLabel"
+                        )-}}
+                    </td>
+                    <td>1</td>
+                    <td>후기</td>
+                    <td>CO31110017</td>
+                    <td>친구와 함께하는 AR체험</td>
+                    <td>친구와 함께하는 AR체험 안내입니다.</td>
+                    <td>준회원</td>
+                    <td>조정석</td>
+                    <td>2021-12-16</td>
+                    <td>1</td>
+                    <td>답변대기</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     {%- include "./__common/__pagenation.njk" -%}
 {% endblock %}

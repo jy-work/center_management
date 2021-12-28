@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>스마트 콘텐츠 게시판</title>
+	<title>스마트 콘텐츠 현황</title>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="./../../style/css/style.css">
 	<style>
@@ -306,224 +306,216 @@
 			</nav>
 			<section class="content">
 				<div class="content_header">
-					<h2 class="content_title">스마트 콘텐츠 게시판</h2>
-					<div class="content_path">홈 &gt; 커뮤니티 관리 &gt; 커뮤니티 게시판 &gt; 스마트 콘텐츠 게시판</div>
+					<h2 class="content_title">스마트 콘텐츠 현황</h2>
+					<div class="content_path">홈 &gt; 서비스 관리 &gt; 스마트 콘텐츠 관리 &gt; 스마트 콘텐츠 현황</div>
 				</div>
 				<form>
-					<div class="search_option smart_content_board">
-						<div class="wrap_uio sb">
-							<label for="subject">분류</label>
-							<select id="subject" name="subject" vaule="선택">
-								<option>공지사항</option>
-								<option>후기</option>
-								<option>질문(Q&amp;A)</option>
-								<option>불만있어요</option>
-								<option>요청사항</option>
-								<option>자유게시판</option>
-							</select>
+					<div class="search_option smart_content_state">
+						<div class="wrap_uio">
+
+							<label for="contentID">콘텐츠 ID</label>
+							<input type="text" id="contentID" name="content_id" />
+
+
 						</div>
 
 						<div class="wrap_uio">
 
-							<label for="title">콘텐츠명</label>
-							<input type="text" id="title" name="title" />
+							<label for="contentName">콘텐츠 명</label>
+							<input type="text" id="contentName" name="content_name" />
 
-							<button type="button">
-								<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF">
-									<path d="M0 0h24v24H0z" fill="none" />
-									<path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
-								</svg>
-								<span class="blind">검색</span>
-							</button>
+
 						</div>
 
 						<div class="wrap_uio">
 
-							<label for="title">제목</label>
-							<input type="text" id="title" name="title" />
+							<label for="admin">담당 관리자</label>
+							<input type="text" id="admin" name="admin" />
 
 
 						</div>
 
 						<div class="wrap_uio sb">
-							<label for="subject_writer">작성자 분류</label>
-							<select id="subject_writer" name="subject_writer" vaule="선택">
-								<option>정회원</option>
-								<option>준회원</option>
-								<option>비회원</option>
-								<option>강사</option>
-								<option>관리자</option>
+							<label for="state">상태</label>
+							<select id="state" name="state" vaule="선택">
+								<option>선택</option>
+								<option>예약가능</option>
+								<option>준비중</option>
 							</select>
 						</div>
 
-						<div class="wrap_uio">
-
-							<label for="writer">작성자</label>
-							<input type="text" id="writer" name="writer" />
-
-
-						</div>
-						<div>
-							<div class="wrap_uio sb">
-								<label for="status">상태</label>
-								<select id="status" name="status" vaule="선택">
-									<option>답변대기</option>
-									<option>답변완료</option>
-									<option>기타</option>
-								</select>
-							</div>
-
-							<button type="button" class="btn_search" style="width: 100px">검색</button>
-						</div>
+						<button type="button" class="btn_search" style="width: 80px">검색</button>
 					</div>
 				</form>
-				<div class="wrap_table">
-					<div class="option_table">
-						<div class="info">
-							Total: <span class="highlight">245</span>건
-							<div class="wrap_uio sb">
-
-								<select id="list_num" name="list_num" vaule="선택">
-									<option>10</option>
-									<option>15</option>
-									<option>20</option>
-									<option>25</option>
-								</select>
+				<section class="search_result">
+					<div class="section_inner">
+						<form>
+							<div class="top_area">
+								<button type="submit" class="btn_submit" style="width: 80px">등록</button>
 							</div>
-							건씩 보기
-						</div>
-						<div class="control">
-							<button type="button" class="del" style="width: ">삭제</button>
+							<div class="section_content">
+								<div class="wrap_table">
+									<table class="smart_content_list typeB">
+										<caption><span class="blind">스마트 콘텐츠 테이블</span></caption>
+										<colgroup>
+											<col width="30px">
+											<col>
+											<col>
+											<col>
+											<col width="80px">
+											<col width="80px">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">
+													<div class="wrap_uio cb">
 
-							<button type="button" class="add" style="width: ">등록</button>
-						</div>
+
+														<input type="checkbox" id="cbLabel" name="cbLabel" />
+
+
+													</div>
+												</th>
+												<th scope="col">콘텐츠 ID</th>
+												<th scope="col">콘텐츠명</th>
+												<th scope="col">장소</th>
+												<th scope="col">담당 관리자</th>
+												<th scope="col">상태</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="select">
+												<td>
+													<div class="wrap_uio cb">
+
+
+														<input type="checkbox" id="cbLabel3" name="cbLabel" />
+
+
+													</div>
+												</td>
+												<td>CO31110002</td>
+												<td>우리동네 시대별 VR체험</td>
+												<td>체험관 501호</td>
+												<td>조정석</td>
+												<td><span class="label_status">예약가능</span></td>
+											</tr>
+											<tr>
+												<td>
+													<div class="wrap_uio cb">
+
+
+														<input type="checkbox" id="cbLabel2" name="cbLabel" />
+
+
+													</div>
+												</td>
+												<td>CO31110212</td>
+												<td>우리동네 시대별 VR체험</td>
+												<td>체험관 501호</td>
+												<td>조정석</td>
+												<td><span class="label_status">예약가능</span></td>
+											</tr>
+											<tr>
+												<td>
+													<div class="wrap_uio cb">
+
+
+														<input type="checkbox" id="cbLabel1" name="cbLabel" />
+
+
+													</div>
+												</td>
+												<td>CO311103302</td>
+												<td>메타버스 체험</td>
+												<td>체험관 504호</td>
+												<td>유연석</td>
+												<td><span class="label_status disabled">준비중</span></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</form>
 					</div>
-					<table class="smart_content_board typeA">
-						<caption><span class="blind">스마트 콘텐츠 게시판 테이블</span></caption>
-						<colgroup>
-							<col width="30px">
-							<col width="35px">
-							<col width="100px">
-							<col width="100px">
-							<col width="15%">
-							<col width="30%" class="title">
-							<col width="80px">
-							<col>
-							<col width="100px">
-							<col width="50px">
-							<col>
-						</colgroup>
-						<thead>
-							<tr>
-								<th scope="col">
-									<div class="wrap_uio cb">
-
-
-										<input type="checkbox" id="cbLabel" name="cbLabel" />
-
-
+					<div class="section_inner">
+						<form>
+							<div class="top_area">
+								<button type="button" class="btn_edit" style="width: 80px">수정</button>
+							</div>
+							<div class="section_content">
+								<div class="grid_wrap smart_content_state">
+									<div class="griditem_img_area">이미지 영역</div>
+									<div class="griditem_id_area">
+										<div class="wrap_uio show_text">
+											<label for="contentId">콘텐츠 ID</label>
+											<input type="text" id="contentId" name="contentId" disabled=true value="CO31110002" />
+										</div>
 									</div>
-								</th>
-								<th scope="col">NO</th>
-								<th scope="col">분류</th>
-								<th scope="col">콘텐츠 ID</th>
-								<th scope="col">콘텐츠명</th>
-								<th scope="col">제목</th>
-								<th scope="col">작성자 분류</th>
-								<th scope="col">작성자</th>
-								<th scope="col">작성일</th>
-								<th scope="col">조회</th>
-								<th scope="col">상태</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr class="select">
-								<td>
-									<div class="wrap_uio cb">
-
-
-										<input type="checkbox" id="cbLabel" name="cbLabel" />
-
-
+									<div class="griditem_status_area">
+										<div class="label">상태</div>
+										<button type="button" class="toggle_status" style="width: " disabled>승인</button>
 									</div>
-								</td>
-								<td>3</td>
-								<td>공지사항</td>
-								<td>CO31110017</td>
-								<td>친구와 함께하는 AR체험</td>
-								<td>친구와 함께하는 AR체험 안내입니다. 친구와 함께하는 AR체험 안내입니다.</td>
-								<td>관리자</td>
-								<td>조정석</td>
-								<td>2021-12-16</td>
-								<td>12</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>
-									<div class="wrap_uio cb">
-
-
-										<input type="checkbox" id="cbLabel" name="cbLabel" />
-
-
+									<div class="griditem_name_area">
+										<div class="wrap_uio show_text">
+											<label for="contentName">콘텐츠명</label>
+											<input type="text" id="contentName" name="contentName" disabled=true value="우리동네 시대별 VR체험" />
+										</div>
 									</div>
-								</td>
-								<td>2</td>
-								<td>후기</td>
-								<td>CO31110017</td>
-								<td>친구와 함께하는 AR체험</td>
-								<td>친구와 함께하는 AR체험 안내입니다.</td>
-								<td>준회원</td>
-								<td>조정석</td>
-								<td>2021-12-16</td>
-								<td>1</td>
-								<td>답변대기</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="wrap_uio cb">
-
-
-										<input type="checkbox" id="cbLabel" name="cbLabel" />
-
-
+									<div class="griditem">
+										<div class="wrap_uio show_text">
+											<label for="contentPlace">장소</label>
+											<input type="text" id="contentPlace" name="contentPlace" disabled=true value="체험관 501호" />
+										</div>
 									</div>
-								</td>
-								<td>1</td>
-								<td>후기</td>
-								<td>CO31110017</td>
-								<td>친구와 함께하는 AR체험</td>
-								<td>친구와 함께하는 AR체험 안내입니다.</td>
-								<td>준회원</td>
-								<td>조정석</td>
-								<td>2021-12-16</td>
-								<td>1</td>
-								<td>답변대기</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div class="pagenation">
-					<div class="wrap_mv">
-						<a href="#" class="link"><span class="material-icons">chevron_left</span< /a>
-								<a href="#" class="link"><span class="material-icons">first_page</span></a>
+									<div class="griditem">
+										<div class="wrap_uio show_text">
+											<label for="contentAdmin">담당 관리자</label>
+											<input type="text" id="contentAdmin" name="contentAdmin" disabled=true value="조정석" />
+										</div>
+									</div>
+									<div class="griditem">
+										<div class="wrap_uio show_text">
+											<label for="contentCall">담당자 연락처</label>
+											<input type="text" id="contentCall" name="contentCall" disabled=true value="02-560-9110" />
+										</div>
+									</div>
+									<div class="griditem_info_area">
+										<div class="wrap_uio show_text_area">
+											<label for="contentInfo">콘텐츠 소개</label>
+											<textarea id="contentInfo" name="contentInfo" disabled=true />시대별 용산구의 모습을 VR로 체험하여 간접적으로 경험할 수 있음</textarea>
+										</div>
+									</div>
+									<div class="griditem">
+										<div class="wrap_uio show_text">
+											<label for="contentCost">비용(시간당)</label>
+											<input type="text" id="contentCost" name="contentCost" disabled=true value="무료" />
+										</div>
+									</div>
+									<div class="griditem">
+										<div class="wrap_uio show_text">
+											<label for="contentWeek">이용가능 요일</label>
+											<input type="text" id="contentWeek" name="contentWeek" disabled=true value="주중" />
+										</div>
+									</div>
+									<div class="griditem">
+										<div class="wrap_uio show_text">
+											<label for="contentTime">이용가능 시간</label>
+											<input type="text" id="contentTime" name="contentTime" disabled=true value="10:00 - 19:00" />
+										</div>
+									</div>
+									<div class="griditem_notice_area">
+										<div class="wrap_uio show_text_area">
+											<label for="contentNotice">콘텐츠 소개</label>
+											<textarea id="contentNotice" name="contentNotice" disabled=true />1. 공휴일 및 일요일은 휴관입니다.</textarea>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
 					</div>
-					<div class="wrap_pages">
-						<button type="button" class="more"><span class="material-icons">more_horiz</span></button>
-						<div class="pages">
-							<a href="#" class="link">36</a>
-							<a href="#" class="link">37</a>
-							<a href="#" class="link">38</a>
-							<a href="#" class="link">39</a>
-							<a href="#" class="link">40</a>
-						</div>
-						<button type="button" class="more"><span class="material-icons">more_horiz</span></button>
-					</div>
-					<div class="wrap_mv">
-						<a href="#" class="link"><span class="material-icons">chevron_right</span></a>
-						<a href="#" class="link"><span class="material-icons">last_page</span></a>
-					</div>
-				</div>
+				</section>
+
 			</section>
 		</div>
 	</div>

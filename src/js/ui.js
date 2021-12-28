@@ -1,19 +1,9 @@
-// $(function () {
-//     var selectTarget = $('.selectbox select');
+$(document).ready(function(){
 
-//     // focus 가 되었을 때와 focus 를 잃었을 때
-//     selectTarget.on({
-//         'focus': function () {
-//             $(this).parent().addClass('focus');
-//         },
-//         'blur': function () {
-//             $(this).parent().removeClass('focus');
-//         }
-//     });
+    const tableRow = $("table tr");
 
-//     selectTarget.change(function () {
-//         var select_name = $(this).children('option:selected').text();
-//         $(this).siblings('label').text(select_name);
-//         $(this).parent().removeClass('focus');
-//     });
-// });
+    tableRow.click(function(){
+        $(this).addClass("select");
+        tableRow.not($(this)).removeClass("select");
+    })
+ });

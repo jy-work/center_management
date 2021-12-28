@@ -5,12 +5,39 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title></title>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="./../../style/css/style.css">
 	<style>
-		.wrap_uio {
+		.wrap_ui {
 			margin-top: 10px;
+			border: 1px solid #ccc;
+			padding: 10px;
+		}
+
+		.inner {
+			width: 500px;
+		}
+
+		.wrap_uio svg {
+			fill: #000;
+		}
+
+		strong {
+			display: block;
+			font-size: 14px;
+			padding-bottom: 10px;
+		}
+
+		p {
+			font-size: 12px;
+		}
+
+		pre {
+			background-color: #dfdfdf;
+			font-family: monospace !important;
+			font-size: 12px;
+			padding: 10px;
 		}
 
 		.content {
@@ -312,38 +339,163 @@
 			<section class="content">
 
 				<h2>UI모음</h2>
-
-				<!-- Selectbox -->
-				<div class="wrap_ui">
-					<div class="wrap_uio sb">
-						<label for="sb">라벨영역</label>
-						<select id="sb" name="sb" vaule="선택">
-							<option>테스트</option>
-							<option>테스트2</option>
-						</select>
+				<div class="inner">
+					<div class="wrap_ui">
+						<strong>라벨 있는 셀렉트박스</strong>
+						<div class="wrap_uio sb">
+							<label for="sb">라벨영역</label>
+							<select id="sb" name="sb" vaule="선택">
+								<option>테스트</option>
+								<option>테스트2</option>
+							</select>
+						</div>
+						<pre>&#123;&#123;- ui.selectbox(
+        label = "라벨영역",
+        id = "sb",
+        name = "sb",
+        options = ["테스트", "테스트2"]
+    )-&#125;&#125;</pre>
 					</div>
-				</div>
 
-				<!-- Search -->
-				<div class="wrap_ui">
-					<div class="wrap_uio search">
-						<label for="search">콘텐츠명</label>
-						<input type="text" id="search" name="search" />
-						<button type="button">
-							<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF">
-								<path d="M0 0h24v24H0z" fill="none" />
-								<path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
-							</svg>
-							<span class="blind">검색</span>
-						</button>
+					<div class="wrap_ui">
+						<strong>라벨 없는 셀렉트박스</strong>
+						<div class="wrap_uio sb">
+
+							<select id="sb" name="sb" vaule="선택">
+								<option>테스트</option>
+								<option>테스트2</option>
+							</select>
+						</div>
+						<pre>&#123;&#123;- ui.selectbox(
+        id = "sb",
+        name = "sb",
+        options = ["테스트", "테스트2"]
+    )-&#125;&#125;</pre>
 					</div>
-				</div>
 
-				<!-- input Text -->
-				<div class="wrap_ui">
-					<div class="wrap_uio txt">
-						<label for="">제목</label>
-						<input type="text" id="text" name="text" />
+					<div class="wrap_ui">
+						<strong>라벨이 있는 검색창</strong>
+						<div class="wrap_uio">
+
+							<label for="text">검색</label>
+							<input type="text" id="text" name="text" />
+
+							<button type="button">
+								<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF">
+									<path d="M0 0h24v24H0z" fill="none" />
+									<path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+								</svg>
+								<span class="blind">검색</span>
+							</button>
+						</div>
+						<pre>&#123;&#123;- ui.inputType(
+        label = "검색",
+        id = "text",
+        name = "text",
+        search = true
+    )-&#125;&#125;</pre>
+						<p>▼ 검색 아이콘(svg) 컬러 변경 코드(기본 컬러 #fff)</p>
+						<pre>
+    svg {
+        fill: #000;
+    }</pre>
+					</div>
+
+					<div class="wrap_ui">
+						<strong>라벨이 있는 텍스트 입력창</strong>
+						<div class="wrap_uio">
+
+							<label for="text">라벨</label>
+							<input type="text" id="text" name="text" />
+
+
+						</div>
+						<pre>&#123;&#123;- ui.inputType(
+        label = "라벨",
+        id = "text",
+        name = "text"
+    )-&#125;&#125;</pre>
+					</div>
+
+					<div class="wrap_ui">
+						<strong>라벨이 없는 텍스트 입력창</strong>
+						<div class="wrap_uio">
+
+
+							<input type="text" id="text" name="text" />
+
+
+						</div>
+						<pre>&#123;&#123;- ui.inputType(
+        id = "text",
+        name = "text"
+    )-&#125;&#125;</pre>
+					</div>
+
+					<div class="wrap_ui">
+						<strong>라벨이 있는 체크박스</strong>
+						<div class="wrap_uio cb">
+
+							<label for="cbLabel">라벨</label>
+							<input type="checkbox" id="cbLabel" name="cbLabel" />
+
+
+						</div>
+						<pre>&#123;&#123;- ui.inputType(
+        type = "checkbox",
+        label = "라벨",
+        id = "cbLabel",
+        name = "cbLabel"
+    )-&#125;&#125;</pre>
+					</div>
+
+					<div class="wrap_ui">
+						<strong>라벨이 없는 체크박스</strong>
+						<div class="wrap_uio cb">
+
+
+							<input type="checkbox" id="cbLabel" name="cbLabel" />
+
+
+						</div>
+						<pre>&#123;&#123;- ui.inputType(
+        type = "checkbox",
+        id = "cbLabel",
+        name = "cbLabel"
+    )-&#125;&#125;</pre>
+					</div>
+
+					<div class="wrap_ui">
+						<strong>라벨이 있는 라디오박스</strong>
+						<div class="wrap_uio rd">
+
+							<label for="rbLabel">라벨</label>
+							<input type="radio" id="rbLabel" name="rbLabel" />
+
+
+						</div>
+						<pre>&#123;&#123;- ui.inputType(
+        type = "radio",
+        label = "라벨",
+        id = "rbLabel",
+        name = "rbLabel"
+    )-&#125;&#125;</pre>
+					</div>
+
+					<div class="wrap_ui">
+						<strong>라벨이 없는 라디오박스</strong>
+						<div class="wrap_uio">
+
+
+							<input type="text" id="rbLabel" name="rbLabel" />
+
+
+						</div>
+						<pre>&#123;&#123;- ui.inputType(
+        type = "radio",
+        id = "rbLabel",
+        name = "rbLabel"
+    )-&#125;&#125;</pre>
 					</div>
 				</div>
 				<div class="pagenation">
@@ -372,6 +524,7 @@
 		</div>
 	</div>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="./../../js/ui.js"></script>
 
 </html>

@@ -1,0 +1,182 @@
+{% extends "./__layout/layout.njk"%}
+{% import "./__common/__uio.njk" as ui %}
+
+{% block style %}
+.wrap_ui {
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.inner {
+    width: 500px;
+}
+
+.wrap_uio svg {
+    fill: #000;
+}
+
+strong {
+    display: block;
+    font-size: 14px;
+    padding-bottom: 10px;
+}
+
+p {
+    font-size: 12px;
+}
+
+pre {
+    background-color: #dfdfdf;
+    font-family: monospace !important;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.content {
+    background-color: #fff;
+}
+{% endblock %}
+
+{% block content %}
+    <h2>UI모음</h2>
+    <div class="inner">
+        <div class="wrap_ui">
+            <strong>라벨 있는 셀렉트박스</strong>
+            {{- ui.selectbox(
+                label = "라벨영역",
+                id = "sb",
+                name = "sb",
+                options = ["테스트", "테스트2"]
+            )-}}
+            <pre>&#123;&#123;- ui.selectbox(
+        label = "라벨영역",
+        id = "sb",
+        name = "sb",
+        options = ["테스트", "테스트2"]
+    )-&#125;&#125;</pre>
+        </div>
+
+        <div class="wrap_ui">
+            <strong>라벨 없는 셀렉트박스</strong>
+            {{- ui.selectbox(
+                id = "sb",
+                name = "sb",
+                options = ["테스트", "테스트2"]
+            )-}}
+            <pre>&#123;&#123;- ui.selectbox(
+        id = "sb",
+        name = "sb",
+        options = ["테스트", "테스트2"]
+    )-&#125;&#125;</pre>
+        </div>
+
+        <div class="wrap_ui">
+            <strong>라벨이 있는 검색창</strong>
+            {{- ui.inputType(
+                label = "검색",
+                id = "text",
+                name = "text",
+                search = true
+            )-}}
+            <pre>&#123;&#123;- ui.inputType(
+        label = "검색",
+        id = "text",
+        name = "text",
+        search = true
+    )-&#125;&#125;</pre>
+            <p>▼ 검색 아이콘(svg) 컬러 변경 코드(기본 컬러 #fff)</p>
+            <pre>
+    svg {
+        fill: #000;
+    }</pre>
+        </div>
+
+        <div class="wrap_ui">
+            <strong>라벨이 있는 텍스트 입력창</strong>
+            {{- ui.inputType(
+                label = "라벨",
+                id = "text",
+                name = "text"
+            )-}}
+            <pre>&#123;&#123;- ui.inputType(
+        label = "라벨",
+        id = "text",
+        name = "text"
+    )-&#125;&#125;</pre>
+        </div>
+
+        <div class="wrap_ui">
+            <strong>라벨이 없는 텍스트 입력창</strong>
+            {{- ui.inputType(
+                id = "text",
+                name = "text"
+            )-}}
+            <pre>&#123;&#123;- ui.inputType(
+        id = "text",
+        name = "text"
+    )-&#125;&#125;</pre>
+        </div>
+
+        <div class="wrap_ui">
+            <strong>라벨이 있는 체크박스</strong>
+            {{- ui.inputType(
+                type = "checkbox",
+                label = "라벨",
+                id = "cbLabel",
+                name = "cbLabel"
+            )-}}
+            <pre>&#123;&#123;- ui.inputType(
+        type = "checkbox",
+        label = "라벨",
+        id = "cbLabel",
+        name = "cbLabel"
+    )-&#125;&#125;</pre>
+        </div>
+
+        <div class="wrap_ui">
+            <strong>라벨이 없는 체크박스</strong>
+            {{- ui.inputType(
+                type = "checkbox",
+                id = "cbLabel",
+                name = "cbLabel"
+            )-}}
+            <pre>&#123;&#123;- ui.inputType(
+        type = "checkbox",
+        id = "cbLabel",
+        name = "cbLabel"
+    )-&#125;&#125;</pre>
+        </div>
+
+        <div class="wrap_ui">
+            <strong>라벨이 있는 라디오박스</strong>
+            {{- ui.inputType(
+                type = "radio",
+                label = "라벨",
+                id = "rbLabel",
+                name = "rbLabel"
+            )-}}
+            <pre>&#123;&#123;- ui.inputType(
+        type = "radio",
+        label = "라벨",
+        id = "rbLabel",
+        name = "rbLabel"
+    )-&#125;&#125;</pre>
+        </div>
+
+        <div class="wrap_ui">
+            <strong>라벨이 없는 라디오박스</strong>
+            {{- ui.inputType(
+                id = "rbLabel",
+                name = "rbLabel"
+            )-}}
+            <pre>&#123;&#123;- ui.inputType(
+        type = "radio",
+        id = "rbLabel",
+        name = "rbLabel"
+    )-&#125;&#125;</pre>
+        </div>
+    </div>
+
+    {%- include "./__common/__pagenation.njk" %}
+{% endblock %}

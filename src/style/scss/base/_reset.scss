@@ -9,11 +9,18 @@
 
 body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,input,legend,li,ol,p,select,table,td,textarea,th,ul {
     margin: 0;
-    padding: 0
+    padding: 0;
+    font-family: SCDream4, serif;
+    -webkit-font-smoothing: antialiased;
 }
 
 button {
-    background-color: transparent
+    background-color: transparent;
+    cursor: pointer;
+
+    &:disabled {
+        cursor: default;
+    }
 }
 
 fieldset,img {
@@ -51,4 +58,24 @@ mark {
 
 i {
     font-style: normal
+}
+
+svg {
+    vertical-align: top;
+}
+
+pre {
+    background-color: #fafafa;
+    border: 1px solid #eaeaea;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    padding: 10px;
+}
+
+code {
+    display: inline-block;
+    padding: 2px 4px;
+    background-color: #e4e4e4;
+    font-family: 'Courier New', Courier, monospace;
+    vertical-align: top;
 }

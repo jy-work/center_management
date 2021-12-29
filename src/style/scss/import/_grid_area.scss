@@ -1,0 +1,91 @@
+.grid_wrap {
+    display: grid;
+
+    &.smart_content_state {
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+        grid-auto-rows: minmax(40px, auto);
+        grid-auto-columns: minmax(100px, auto);
+
+        .griditem_img_area {
+            grid-row: 1 / span 3;
+            background-color: #ddd;
+        }
+
+        .griditem_id_area {
+            grid-column: 2 / span 2;
+        }
+
+        .griditem_status_area {
+            .label {
+                font-size: 12px;
+                line-height: 25px;
+            }
+
+            .toggle_status {
+                width: 100%;
+                vertical-align: top;
+                height: 25px;
+                border: 0;
+                background: $green_20;
+                color: #000;
+            }
+        }
+
+        .griditem_name_area {
+            grid-column: 2 / span 3;
+        }
+
+        .griditem_info_area {
+            grid-column: 1 / span 4;
+        }
+
+        .griditem_time_area {
+            grid-column: 3 / span 2;
+        }
+
+        .griditem_notice_area {
+            grid-column: 1 / span 4;
+        }
+    }
+    &.teacher_state {
+        grid-template-columns: 150px;
+        grid-gap: 10px;
+        grid-auto-rows: minmax(40px, auto);
+        grid-auto-columns: minmax(20px, auto);
+
+        .griditem_img_area {
+            grid-row: 1 / span 3;
+            background-color: #ddd;
+        }
+
+        .griditem_status_area {
+            grid-column: 4 / span 2;
+
+            .label {
+                font-size: 12px;
+                line-height: 25px;
+            }
+
+            .toggle_status {
+                width: 100%;
+                vertical-align: top;
+                height: 25px;
+                border: 0;
+                background: $green_20;
+                color: #000;
+            }
+        }
+
+        .griditem_adress_area {
+            grid-column: 2 / span 4;
+        }
+    }
+
+    &.teacher_state_sub {
+        margin: 10px 0;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
+        grid-auto-rows: minmax(40px, auto);
+    }
+}

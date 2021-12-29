@@ -1,18 +1,19 @@
 nav {
     width: 250px;
     padding: 20px 0;
-    background-color: $nav_bg;
+    background-color: $navy;
     box-sizing: border-box;
+    flex-shrink: 0;
 }
 
 .list_gnb {
-    background-color: $nav_bg;
+    background-color: $navy;
     color: #fff;
     font-size: 15px;
 
     .item_gnb {
         &:hover, &.active {
-            background-color: #222;
+            background-color: $navy_20;
 
             .inner_gnb {
                 display: block;
@@ -36,28 +37,31 @@ nav {
 
 .inner_gnb {
     display: none;
-    background-color: #222;
+    background-color: $navy_60;
     font-size: 13px;
-    line-height: 50px;
+    line-height: 45px;
 
     .list_sub_title {
         display: block;
         padding: 0 20px 0 35px;
-        background-color: $nav_sub;
+        background-color: $navy_40;
     }
 
     .list_sub {
         .item_sub {
-            padding: 0 20px 0 50px;
-            font-size: 12px;
+            font-size: 13px;
 
-            &::before {
-                padding-right: 3px;
-                content: '-';
+            .link {
+                padding: 0 20px 0 50px;
+                &::before {
+                    padding-right: 3px;
+                    content: '-';
+                }
+                display: block;
             }
 
             &:hover, &.active {
-                color: orange;
+                color: $yellow_40;
             }
         }
     }

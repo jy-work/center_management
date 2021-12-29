@@ -1,0 +1,219 @@
+{% extends "./__layout/layout.njk"%}
+{% block pageTitle %}스마트 콘텐츠 현황{% endblock %}
+{% import "./__common/__content_header.njk" as contentHeader %}
+{% import "./__common/__uio.njk" as ui %}
+
+{% block content -%}
+    {{- contentHeader.contentHeader(tit="스마트 콘텐츠 현황", path="홈 > 서비스 관리 > 스마트 콘텐츠 관리 > 스마트 콘텐츠 현황" ) -}}
+    <form>
+        <div class="search_option smart_content_state">
+            {{- ui.inputType(
+                label = "콘텐츠 ID", 
+                id = "contentID", 
+                name = "content_id") -}}
+
+            {{- ui.inputType(
+                label = "콘텐츠 명", 
+                id = "contentName", 
+                name = "content_name") -}}
+
+            {{- ui.inputType(
+                label = "담당 관리자", 
+                id = "admin", 
+                name = "admin") -}}
+
+            {{- ui.selectbox(
+                label = "상태", 
+                id = "state",
+                name = "state",
+                options = ["선택", "예약가능", "준비중"]
+            )-}}
+
+            {{- ui.btn(value="검색", class="btn_search", width="80px") -}}
+        </div>
+    </form>
+    <section class="search_result">
+        <div class="section_inner">
+            <form>
+                <div class="top_area">
+                    {{- ui.btn(type="submit", value="등록", class="btn_submit", width="80px") -}}
+                </div>
+                <div class="section_content">
+                    <div class="wrap_table">
+                        <table class="smart_content_list typeB">
+                            <caption><span class="blind">스마트 콘텐츠 테이블</span></caption>
+                            <colgroup>
+                                <col width="30px">
+                                <col>
+                                <col>
+                                <col>
+                                <col width="80px">
+                                <col width="80px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">
+                                        {{- ui.inputType(
+                                            type = "checkbox",
+                                            id = "cbLabel",
+                                            name = "cbLabel"
+                                        )-}}
+                                    </th>
+                                    <th scope="col">콘텐츠 ID</th>
+                                    <th scope="col">콘텐츠명</th>
+                                    <th scope="col">장소</th>
+                                    <th scope="col">담당 관리자</th>
+                                    <th scope="col">상태</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="on">
+                                    <td>
+                                        {{- ui.inputType(
+                                            type = "checkbox",
+                                            id = "cbLabel3",
+                                            name = "cbLabel"
+                                        )-}}
+                                    </td>
+                                    <td>CO31110002</td>
+                                    <td>우리동네 시대별 VR체험</td>
+                                    <td>체험관 501호</td>
+                                    <td>조정석</td>
+                                    <td><span class="label_status">예약가능</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        {{- ui.inputType(
+                                            type = "checkbox",
+                                            id = "cbLabel2",
+                                            name = "cbLabel"
+                                        )-}}
+                                    </td>
+                                    <td>CO31110212</td>
+                                    <td>우리동네 시대별 VR체험</td>
+                                    <td>체험관 501호</td>
+                                    <td>조정석</td>
+                                    <td><span class="label_status">예약가능</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        {{- ui.inputType(
+                                            type = "checkbox",
+                                            id = "cbLabel1",
+                                            name = "cbLabel"
+                                        )-}}
+                                    </td>
+                                    <td>CO311103302</td>
+                                    <td>메타버스 체험</td>
+                                    <td>체험관 504호</td>
+                                    <td>유연석</td>
+                                    <td><span class="label_status disabled">준비중</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="section_inner">
+            <form>
+                <div class="top_area">
+                    {{- ui.btn(value="수정", class="btn_edit", width="80px") -}}
+                </div>
+                <div class="section_content">
+                    <div class="grid_wrap smart_content_state">
+                        <div class="griditem_img_area">이미지 영역</div>
+                        <div class="griditem_id_area">
+                            {{- ui.inputShowType(
+                                label = "콘텐츠 ID",
+                                id = "contentId",
+                                name = "contentId",
+                                value = "CO31110002"
+                            )-}}
+                        </div>
+                        <div class="griditem_status_area">
+                            <div class="label">상태</div>
+                            {{- ui.btn(
+                                value="승인",
+                                class="toggle_status",
+                                disabled=true
+                            )-}}
+                        </div>
+                        <div class="griditem_name_area">
+                            {{- ui.inputShowType(
+                                label = "콘텐츠명",
+                                id = "contentName",
+                                name = "contentName",
+                                value = "우리동네 시대별 VR체험"
+                            )-}}
+                        </div>
+                        <div class="griditem">
+                            {{- ui.inputShowType(
+                                label = "장소",
+                                id = "contentPlace",
+                                name = "contentPlace",
+                                value = "체험관 501호"
+                            )-}}
+                        </div>
+                        <div class="griditem">
+                            {{- ui.inputShowType(
+                                label = "담당 관리자",
+                                id = "contentAdmin",
+                                name = "contentAdmin",
+                                value = "조정석"
+                            )-}}
+                        </div>
+                        <div class="griditem">
+                            {{- ui.inputShowType(
+                                label = "담당자 연락처",
+                                id = "contentCall",
+                                name = "contentCall",
+                                value = "02-560-9110"
+                            )-}}
+                        </div>
+                        <div class="griditem_info_area">
+                            {{- ui.textareaShowType(
+                                label = "콘텐츠 소개",
+                                id = "contentInfo",
+                                name = "contentInfo",
+                                value = "시대별 용산구의 모습을 VR로 체험하여 간접적으로 경험할 수 있음"
+                            )-}}
+                        </div>
+                        <div class="griditem">
+                            {{- ui.inputShowType(
+                                label = "비용(시간당)",
+                                id = "contentCost",
+                                name = "contentCost",
+                                value = "무료"
+                            )-}}
+                        </div>
+                        <div class="griditem">
+                            {{- ui.inputShowType(
+                                label = "이용가능 요일",
+                                id = "contentWeek",
+                                name = "contentWeek",
+                                value = "주중"
+                            )-}}
+                        </div>
+                        <div class="griditem">
+                            {{- ui.inputShowType(
+                                label = "이용가능 시간",
+                                id = "contentTime",
+                                name = "contentTime",
+                                value = "10:00 - 19:00"
+                            )-}}
+                        </div>
+                        <div class="griditem_notice_area">
+                            {{- ui.textareaShowType(
+                                label = "콘텐츠 소개",
+                                id = "contentNotice",
+                                name = "contentNotice",
+                                value = "1. 공휴일 및 일요일은 휴관입니다."
+                            )-}}
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+{% endblock %}

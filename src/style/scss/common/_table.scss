@@ -1,35 +1,52 @@
 .wrap_table {
-    .content_table {
+    table {
         width: 100%;
-        margin-top: 5px;
-        border: 1px solid #aaa;
+        border: 1px solid $gray_40;
         border-collapse: collapse;
         table-layout: fixed;
         font-size: 13px;
 
-        tr.select {
-            background-color: rgb(255, 199, 199);
-        }
-
         th, td {
-            border: 1px solid #aaa;
+            border: 1px solid $gray_40;
             padding: 10px 5px;
             height: 10px;
             text-align: center;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+        }
+    }
 
-            .wrap_uio.cb {
-                > input {
-                    width: 16px;
-                    height: 16px;
-                }
-            }
+    table.smart_content_board {
+        margin-top: 5px;
+
+        th {
+            background-color: $gray_80;
         }
 
         td:nth-of-type(6) {
             text-align: left;
+        }
+    }
+
+    table.smart_content_list {
+        font-size: 12px;
+
+        th {
+            background-color: $gray_80;
+            color: $blue_40;
+        }
+
+        .label_status {
+            display: inline-block;
+            padding: 4px;
+            background-color: $green_20;
+            border-radius: 2px;
+            vertical-align: top;
+
+            &.disabled {
+                background-color: $gray_40;
+            }
         }
     }
 
@@ -46,16 +63,17 @@
             line-height: 18px;
 
             .highlight {
-                color: $nav_sub;
+                font-weight: bolder;
+                color: $navy_40;
             }
+        }
 
-            .wrap_uio.sb {
-                border: 1px solid #ccc;
-                margin: 0 5px;
+        .wrap_uio.sb {
+            margin-left: 10px;
 
-                > select {
-                    height: 15px;
-                }
+            > select {
+                height: 18px;
+                margin-right: 3px;
             }
         }
 
@@ -74,12 +92,33 @@
             }
 
             .del {
-                background-color: rgb(255, 149, 149);
+                background-color: $red_40;
             }
 
             .add {
-                background-color: $search_bg;
+                background-color: $blue_40;
             }
+        }
+    }
+
+    .class_teaching_list {
+        font-size: 12px;
+
+        th {
+            background-color: #dfdfdf;
+            color: $blue_40;
+        }
+    }
+
+    .typeA {
+        tbody tr.on {
+            background-color: $red_80;
+        }
+    }
+
+    .typeB {
+        tbody tr.on {
+            background-color: $blue_60;
         }
     }
 }

@@ -1,0 +1,526 @@
+{% extends "./__layout/layout.njk"%}
+{% import "./__common/__uio.njk" as ui %}
+
+{% block style %}
+h2 {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #aaa;
+}
+
+h3 {
+    margin-top: 25px;
+    padding: 5px;
+    background: linear-gradient(90deg, rgba(163,199,255,1) 0%, rgba(150,255,217,0.4) 40%, rgba(150,255,217,0) 100%);
+}
+
+h3::before{
+    display: inline-block;
+    margin-right: 4px;
+    vertical-align: top;
+    content: "🛠";
+}
+
+.wrap_ui {
+    position: relative;
+    flex-basis: 50%;
+    margin-top: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.wrap_ui::after {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 1px solid #ccc;
+    content: '';
+    z-index: -1;
+}
+
+.inner {
+    display: flex;
+    max-width: 1000px;
+    background-color: #fff;
+    flex-wrap: wrap;
+}
+
+.wrap_uio svg {
+    fill: #000;
+}
+
+.content strong {
+    display: block;
+    font-size: 14px;
+    padding: 10px;
+    margin: -14px -14px 10px -14px;
+    background: #eaeaea;
+}
+
+p {
+    padding: 2px 0;
+}
+
+p > a{
+    color: #3071F2;
+    font-weight: bolder;
+}
+
+.wrap_ui p {
+    padding: 2px 0;
+    font-size: 13px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+{% endblock %}
+
+{% block content %}
+    <h2>UI모음</h2>
+    <h3>form UI(셀렉트박스(콤보박스): selectbox)</h3>
+    <p>- input type은 <a href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/Input" target="_blank">링크</a> 참고<p>
+    <div class="inner">
+        <div class="wrap_ui">
+            <strong>라벨 있는 셀렉트박스</strong>
+            {{- ui.selectbox(
+                label = "라벨영역",
+                id = "sb",
+                name = "sb",
+                options = ["테스트", "테스트2"]
+            )-}}
+            <pre>&#123;&#123;- ui.selectbox(
+    label = "라벨영역",
+    id = "sb",
+    name = "sb",
+    options = ["테스트", "테스트2"]
+)-&#125;&#125;</pre>
+        </div>
+
+        <div class="wrap_ui">
+            <strong>라벨 없는 셀렉트박스</strong>
+            {{- ui.selectbox(
+                id = "sb",
+                name = "sb",
+                options = ["테스트", "테스트2"]
+            )-}}
+            <pre>&#123;&#123;- ui.selectbox(
+    id = "sb",
+    name = "sb",
+    options = ["테스트", "테스트2"]
+)-&#125;&#125;</pre>
+        </div>
+    </div>
+
+    <h3>form UI(텍스트: input[type="text"])</h3>
+    <div class="inner">
+        <div class="wrap_ui">
+            <strong>라벨이 있는 텍스트 입력창</strong>
+            {{- ui.inputType(
+                label = "라벨",
+                id = "text",
+                name = "text"
+            )-}}
+            <pre>&#123;&#123;- ui.inputType(
+    label = "라벨",
+    id = "text",
+    name = "text"
+)-&#125;&#125;</pre>
+        </div>
+
+        <div class="wrap_ui">
+            <strong>라벨이 없는 텍스트 입력창</strong>
+            {{- ui.inputType(
+                id = "text",
+                name = "text"
+            )-}}
+            <pre>&#123;&#123;- ui.inputType(
+    id = "text",
+    name = "text"
+)-&#125;&#125;</pre>
+        </div>
+
+        <div class="wrap_ui">
+            <strong>인적사항 텍스트 입력창(활성화: disabled = false)</strong>
+            {{- ui.inputShowType(
+                label = "담당자",
+                id = "admin",
+                name = "admin",
+                value = "김진수",
+                disabled = false
+            )-}}
+            <pre>&#123;&#123;- ui.inputShowType(
+    label = "담당자 연락처",
+    id = "contentCall",
+    name = "contentCall",
+    value = "02-560-9110"
+)-&#125;&#125;</pre>
+        </div>
+
+        <div class="wrap_ui">
+            <strong>인적사항 텍스트 입력창(비활성화: disabled = true(default))</strong>
+            {{- ui.inputShowType(
+                label = "담당자",
+                id = "admin",
+                name = "admin",
+                value = "김진수"
+            )-}}
+            <pre>&#123;&#123;- ui.inputShowType(
+    label = "담당자 연락처",
+    id = "contentCall",
+    name = "contentCall",
+    value = "02-560-9110"
+)-&#125;&#125;</pre>
+        </div>
+    </div>
+
+    <h3>form UI(검색: input[type="text"])</h3>
+    <div class="inner">
+        <div class="wrap_ui">
+            <strong>라벨이 있는 검색창</strong>
+            {{- ui.inputType(
+                label = "검색",
+                id = "text",
+                name = "text",
+                search = true
+            )-}}
+            <pre>&#123;&#123;- ui.inputType(
+    label = "검색",
+    id = "text",
+    name = "text",
+    search = true
+)-&#125;&#125;</pre>
+            <p>▼ 검색 아이콘(svg) 컬러 변경 CSS 코드(기본 컬러 #fff)</p>
+            <pre>
+svg {
+    fill: #000;
+}</pre>
+        </div>
+
+        <div class="wrap_ui">
+            <strong>라벨이 없는 검색창</strong>
+            {{- ui.inputType(
+                id = "text",
+                name = "text",
+                search = true
+            )-}}
+            <pre>&#123;&#123;- ui.inputType(
+    label = "검색",
+    id = "text",
+    name = "text",
+    search = true
+)-&#125;&#125;</pre>
+        </div>
+    </div>
+
+    <h3>form UI(파일: input[type="file"])</h3>
+    <div class="inner">
+        <div class="wrap_ui">
+            <strong>라벨이 있는 파일 열기</strong>
+            {{- ui.inputFile(
+                label = "라벨",
+                id = "file",
+                name = "file"
+            )-}}
+            <pre>&#123;&#123;- ui.inputType(
+    label = "라벨",
+    id = "text",
+    name = "text"
+)-&#125;&#125;</pre>
+        </div>
+
+        <div class="wrap_ui">
+            <strong>라벨이 없는 파일 열기</strong>
+            {{- ui.inputFile(
+                id = "file",
+                name = "file"
+            )-}}
+            <pre>&#123;&#123;- ui.inputType(
+    id = "text",
+    name = "text"
+)-&#125;&#125;</pre>
+        </div>
+    </div>
+
+    <h3>form UI(체크박스: input[type="checkbox"])</h3>
+    <div class="inner">
+        <div class="wrap_ui">
+            <strong>라벨이 있는 체크박스</strong>
+            {{- ui.inputType(
+                type = "checkbox",
+                label = "라벨",
+                id = "cbLabel",
+                name = "cbLabel"
+            )-}}
+            <pre>&#123;&#123;- ui.inputType(
+    type = "checkbox",
+    label = "라벨",
+    id = "cbLabel",
+    name = "cbLabel"
+)-&#125;&#125;</pre>
+        </div>
+
+        <div class="wrap_ui">
+            <strong>라벨이 없는 체크박스</strong>
+            {{- ui.inputType(
+                type = "checkbox",
+                id = "cbLabel",
+                name = "cbLabel"
+            )-}}
+            <pre>&#123;&#123;- ui.inputType(
+    type = "checkbox",
+    id = "cbLabel",
+    name = "cbLabel"
+)-&#125;&#125;</pre>
+        </div>
+    </div>
+
+    <h3>form UI(input[type="radio"])</h3>
+    <div class="inner">
+        <div class="wrap_ui">
+            <strong>라벨이 있는 라디오박스</strong>
+            {{- ui.inputType(
+                type = "radio",
+                label = "라벨",
+                id = "rbLabel",
+                name = "rbLabel"
+            )-}}
+            <pre>&#123;&#123;- ui.inputType(
+    type = "radio",
+    label = "라벨",
+    id = "rbLabel",
+    name = "rbLabel"
+)-&#125;&#125;</pre>
+        </div>
+
+        <div class="wrap_ui">
+            <strong>라벨이 없는 라디오박스</strong>
+            {{- ui.inputType(
+                id = "rbLabel",
+                name = "rbLabel"
+            )-}}
+            <pre>&#123;&#123;- ui.inputType(
+    type = "radio",
+    id = "rbLabel",
+    name = "rbLabel"
+)-&#125;&#125;</pre>
+        </div>
+    </div>
+
+    <h3>form UI(textarea)</h3>
+    <div class="inner">
+        <div class="wrap_ui">
+            <strong>인적사항 텍스트박스(활성화: disabled = false)</strong>
+            {{- ui.textareaShowType(
+                label = "콘텐츠 소개",
+                id = "contentInfo",
+                name = "contentInfo",
+                value = "시대별 용산구의 모습을 VR로 체험",
+                disabled = false
+            )-}}
+            <pre>&#123;&#123;- ui.textareaShowType(
+    label = "콘텐츠 소개",
+    id = "contentInfo",
+    name = "contentInfo",
+    value = "시대별 용산구의 모습을 VR로 체험"
+)-&#125;&#125;</pre>
+        </div>
+
+        <div class="wrap_ui">
+            <strong>인적사항 텍스트박스(비활성화: disabled = true(default))</strong>
+            {{- ui.textareaShowType(
+                label = "콘텐츠 소개",
+                id = "contentInfo",
+                name = "contentInfo",
+                value = "시대별 용산구의 모습을 VR로 체험"
+            )-}}
+            <pre>&#123;&#123;- ui.textareaShowType(
+    label = "콘텐츠 소개",
+    id = "contentInfo",
+    name = "contentInfo",
+    value = "시대별 용산구의 모습을 VR로 체험"
+)-&#125;&#125;</pre>
+        </div>
+    </div>
+
+    <h3>form UI(기타)</h3>
+    <div class="inner">
+        <div class="wrap_ui">
+            <strong>버튼</strong>
+            {{- ui.btn(
+                type="submit",
+                value="등록",
+                class="btn_submit",
+                width="80px"
+            )-}}
+            <pre>&#123;&#123;- ui.btn(
+    type="submit",
+    value="등록",
+    class="btn_submit",
+    width="80px"
+)-&#125;&#125;</pre>
+        </div>
+    </div>
+    
+    <h3>페이지네이션</h3>
+    <div class="inner">
+        <div class="wrap_ui">
+            <strong>페이지네이션</strong>
+            <p><code>on</code> 클래스 추가 시, 페이지 선택 표시</p>
+            {%- include "./__common/__pagenation.njk" %}
+        </div>
+    </div>
+
+    <h3>테이블</h3>
+    <div class="inner">
+        <div class="wrap_ui">
+            <strong>typeA</strong>
+            <p>- row 선택 시, 레드 컬러<p>
+            <p>- <code>table</code> class에 <code>typeA</code> 추가</p>
+            <div class="wrap_table">
+                <table class="smart_content_board typeA">
+                    <caption><span class="blind">스마트 콘텐츠 게시판 테이블</span></caption>
+                    <colgroup>
+                        <col width="30px">
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">
+                                {{- ui.inputType(
+                                    type = "checkbox",
+                                    id = "cbLabel",
+                                    name = "cbLabel"
+                                )-}}
+                            </th>
+                            <th scope="col">NO</th>
+                            <th scope="col">분류</th>
+                            <th scope="col">콘텐츠 ID</th>
+                            <th scope="col">콘텐츠명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="on">
+                            <td>
+                                {{- ui.inputType(
+                                    type = "checkbox",
+                                    id = "cbLabel",
+                                    name = "cbLabel"
+                                )-}}
+                            </td>
+                            <td>3</td>
+                            <td>공지사항</td>
+                            <td>CO31110017</td>
+                            <td>친구와 함께하는 AR체험</td>
+                        </tr>
+                                        <tr>
+                            <td>
+                                {{- ui.inputType(
+                                    type = "checkbox",
+                                    id = "cbLabel",
+                                    name = "cbLabel"
+                                )-}}
+                            </td>
+                            <td>2</td>
+                            <td>후기</td>
+                            <td>CO31110017</td>
+                            <td>친구와 함께하는 AR체험</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                {{- ui.inputType(
+                                    type = "checkbox",
+                                    id = "cbLabel",
+                                    name = "cbLabel"
+                                )-}}
+                            </td>
+                            <td>1</td>
+                            <td>후기</td>
+                            <td>CO31110017</td>
+                            <td>친구와 함께하는 AR체험</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="wrap_ui">
+            <strong>typeB</strong>
+            <p>- row 선택 시, 블루 컬러<p>
+            <p>- <code>table</code> class에 <code>typeB</code> 추가</p>
+            <div class="wrap_table">
+                <table class="smart_content_board typeB">
+                    <caption><span class="blind">스마트 콘텐츠 게시판 테이블</span></caption>
+                    <colgroup>
+                        <col width="30px">
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">
+                                {{- ui.inputType(
+                                    type = "checkbox",
+                                    id = "cbLabel",
+                                    name = "cbLabel"
+                                )-}}
+                            </th>
+                            <th scope="col">NO</th>
+                            <th scope="col">분류</th>
+                            <th scope="col">콘텐츠 ID</th>
+                            <th scope="col">콘텐츠명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="on">
+                            <td>
+                                {{- ui.inputType(
+                                    type = "checkbox",
+                                    id = "cbLabel",
+                                    name = "cbLabel"
+                                )-}}
+                            </td>
+                            <td>3</td>
+                            <td>공지사항</td>
+                            <td>CO31110017</td>
+                            <td>친구와 함께하는 AR체험</td>
+                        </tr>
+                                        <tr>
+                            <td>
+                                {{- ui.inputType(
+                                    type = "checkbox",
+                                    id = "cbLabel",
+                                    name = "cbLabel"
+                                )-}}
+                            </td>
+                            <td>2</td>
+                            <td>후기</td>
+                            <td>CO31110017</td>
+                            <td>친구와 함께하는 AR체험</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                {{- ui.inputType(
+                                    type = "checkbox",
+                                    id = "cbLabel",
+                                    name = "cbLabel"
+                                )-}}
+                            </td>
+                            <td>1</td>
+                            <td>후기</td>
+                            <td>CO31110017</td>
+                            <td>친구와 함께하는 AR체험</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

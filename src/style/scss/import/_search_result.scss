@@ -1,0 +1,40 @@
+.search_result {
+    margin-top: 20px;
+    display: flex;
+
+    .section_inner {
+        flex-basis: 50%;
+        border: 1px solid #ccc;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.35);
+
+        &:last-child {
+            margin-left: 10px;
+        }
+
+        .top_area {
+            padding: 3px 5px;
+            height: 25px;
+            background-color: #ccc;
+            text-align: right;
+
+            button[class^="btn_"] {
+                background-color: $blue_40;
+                height: 25px;
+                border-radius: 2px;
+                border: 0;
+                color: #fff;
+                vertical-align: top;
+
+                &.btn_action {
+                    background-color: #fff;
+                    color: #000;
+                }
+            }
+        }
+
+        .section_content {
+            padding: 5px;
+            font-size: 12px;
+        }
+    }
+}

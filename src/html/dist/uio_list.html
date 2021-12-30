@@ -687,27 +687,37 @@ svg {
 				<div class="inner">
 					<div class="wrap_ui">
 						<strong>페이지네이션</strong>
-						<p><code>on</code> 클래스 추가 시, 페이지 선택 표시</p>
-						<div class="pagenation">
-							<div class="wrap_mv">
-								<a href="#" class="link"><span class="material-icons">chevron_left</span< /a>
-										<a href="#" class="link"><span class="material-icons">first_page</span></a>
-							</div>
-							<div class="wrap_pages">
-								<button type="button" class="more"><span class="material-icons">more_horiz</span></button>
-								<div class="pages">
-									<a href="#" class="link">36</a>
-									<a href="#" class="link">37</a>
-									<a href="#" class="link on">38</a>
-									<a href="#" class="link">39</a>
-									<a href="#" class="link">40</a>
-								</div>
-								<button type="button" class="more"><span class="material-icons">more_horiz</span></button>
-							</div>
-							<div class="wrap_mv">
-								<a href="#" class="link"><span class="material-icons">chevron_right</span></a>
-								<a href="#" class="link"><span class="material-icons">last_page</span></a>
-							</div>
+						<p><code>current</code> 클래스 추가 시, 페이지 선택 표시</p>
+						<div class="pagenation" id="pagination">
+							<ul class="list_pages">
+								<li class="first" fnname="selectList">
+									<a href="#" class="link"><span class="material-icons">chevron_left</span></a>
+								</li>
+								<li class="prev" fnname="selectList">
+									<a href="#" class="link"><span class="material-icons">first_page</span></a>
+								</li>
+								<li class="current" fnname="selectList">
+									<a href="#" class="link">1</a>
+								</li>
+								<li class="num" fnname="selectList">
+									<a href="#" class="link">2</a>
+								</li>
+								<li class="num" fnname="selectList">
+									<a href="#" class="link">3</a>
+								</li>
+								<li class="num" fnname="selectList">
+									<a href="#" class="link">4</a>
+								</li>
+								<li class="num" fnname="selectList">
+									<a href="#" class="link">5</a>
+								</li>
+								<li class="next" fnname="selectList">
+									<a href="#" class="link"><span class="material-icons">chevron_right</span></a>
+								</li>
+								<li class="last" fnname="selectList">
+									<a href="#" class="link"><span class="material-icons">last_page</span></a>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>

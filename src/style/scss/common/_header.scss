@@ -27,12 +27,12 @@ header {
         left: 20px;
         width: 24px;
         height: 24px;
-        background: url("../../../img/icon_menu_open.png") no-repeat;
+        background: url("../../img/icon_menu_open.png") no-repeat;
         border: 0;
         content: "";
 
         &.fold {
-            background-image: url("../../../img/icon_menu.png");
+            background-image: url("../../img/icon_menu.png");
         }
     }
 

@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title></title>
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="./../../style/css/style.css">
 	<style>
 		h2 {
@@ -95,287 +95,421 @@
 					<span class="blind">용산구 YOUTH 통합플랫폼"</span>
 				</a>
 			</h1>
+			<!-- [D] 메뉴 오픈 시, fold 클래스 제거, aria-expanded="true" 로 변경-->
+			<button class="btn_menu" type="button" aria-expanded="true">
+				<span class="blind">메뉴</span>
+			</button>
+			<div class="tool_box">
+				<!-- [D] 알림 표시 노출 시, on 클래스 추가 -->
+				<a href="#" class="on"><span class="blind">메일</span><span class="material-icons-outlined">mail</span></a>
+				<button type="button" class="btn_alert on"><span class="blind">알림</span><span class="material-icons-outlined">notifications</span></button>
+			</div>
+			<a href="#" class="header_profile">
+				<img src="https://lh3.googleusercontent.com/P8iszSIOvGKrqWYo_DYebQ5FnxH1IbgumJX0hkEGYdEoH98cJFsP8j4y8Z49HpL_KqzYkEoy394QZ2q7MpCJsHPIXA" alt="프로필 사진" width="40" height="40">
+				<div class="info">
+					<div class="name">홍길동</div>
+					<div class="group">수퍼관리자/용산구청소년센터</div>
+				</div>
+			</a>
 		</header>
+		<div class="box_alert on">
+			<button type="button" class="btn_open_alert"><span class="blind">알림창</span></button>
+			<div class="wrap_alert">
+				<a href="#" class="item_alert">
+					링크형 알림 클릭 클릭
+				</a>
+				<div class="item_alert">
+					확인형 알림 클릭 안됨
+				</div>
+				<div class="item_alert">
+					내용이 길어진다아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아
+				</div>
+				<a href="#" class="item_alert">
+					링크형 알림 클릭 클릭
+				</a>
+				<div class="item_alert">
+					확인형 알림 클릭 안됨
+				</div>
+				<div class="item_alert">
+					내용이 길어진다아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아
+				</div>
+				<a href="#" class="item_alert">
+					링크형 알림 클릭 클릭
+				</a>
+				<div class="item_alert">
+					확인형 알림 클릭 안됨
+				</div>
+				<div class="item_alert">
+					내용이 길어진다아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아
+				</div>
+				<a href="#" class="item_alert">
+					링크형 알림 클릭 클릭
+				</a>
+				<div class="item_alert">
+					확인형 알림 클릭 안됨
+				</div>
+				<div class="item_alert">
+					내용이 길어진다아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아
+				</div>
+
+			</div>
+			<button class="btn_reset" type="button">전체 지우기</button>
+		</div>
 		<div class="container">
-			<nav>
-				<ul class="list_gnb">
-					<li class="item_gnb">
-						<a href="#" class="btn_gnb">
-							<span class="material-icons">home</span>홈
-						</a>
+			<!-- [D] 접힌 nav는 fold 클래스 추가해주세요. -->
+			<nav class="">
+				<div class="wrap_gnb">
+					<ul class="list_gnb">
+						<!-- [D] 알람이 있는 메뉴에 alert 클래스 추가해주세요. -->
+						<li class="item_gnb">
+							<a href="#" class="btn_gnb">
+								<span class="material-icons-outlined">grid_view</span>
+								<strong class="txt_gnb">운영 상황판</strong>
+							</a>
+							<!-- [D] 알람이 있는 경우, 알람 갯수 표시 -->
+							<span class="alert_num">2</span>
 
-					</li>
-					<li class="item_gnb">
-						<a href="#" class="btn_gnb">
-							<span class="material-icons">person</span>사용자 관리
-						</a>
-						<div class="inner_gnb">
-							<strong class="list_sub_title">회원 관리</strong>
-							<ul class="list_sub">
-								<li class="item_sub">
-									<a href="#" class="link">회원 현황</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">회원 가입 승인</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">화이트·블랙 리스트 관리</a>
-								</li>
-							</ul><strong class="list_sub_title">강사 관리</strong>
-							<ul class="list_sub">
-								<li class="item_sub">
-									<a href="#" class="link">강사 현황</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">평가 관리 현황</a>
-								</li>
-							</ul>
-						</div>
-					</li>
-					<li class="item_gnb">
-						<a href="#" class="btn_gnb">
-							<span class="material-icons">assignment_turned_in</span>서비스 관리
-						</a>
-						<div class="inner_gnb">
-							<strong class="list_sub_title">스마트 컨텐츠 관리</strong>
-							<ul class="list_sub">
-								<li class="item_sub">
-									<a href="#" class="link">스마트 콘텐츠 대시보드</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">스마트 콘텐츠 현황</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">콘텐츠 관리</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">디바이스 관리</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">공간 관리</a>
-								</li>
-							</ul><strong class="list_sub_title">스마트 클래스 관리</strong>
-							<ul class="list_sub">
-								<li class="item_sub">
-									<a href="#" class="link">스마트 클래스 대시보드</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">스마트 클래스 현황</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">클래스 실적 관리</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">디바이스 관리</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">공간 관리</a>
-								</li>
-							</ul><strong class="list_sub_title">동아리 관리</strong>
-							<ul class="list_sub">
-								<li class="item_sub">
-									<a href="#" class="link">동아리 현황</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">동아리 승인/폐지</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">동아리 관리</a>
-								</li>
-							</ul><strong class="list_sub_title">대관 관리</strong>
-							<ul class="list_sub">
-								<li class="item_sub">
-									<a href="#" class="link">대관 현황</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">대관 공간 관리</a>
-								</li>
-							</ul>
-						</div>
-					</li>
-					<li class="item_gnb">
-						<a href="#" class="btn_gnb">
-							<span class="material-icons">event_available</span>예약 관리
-						</a>
-						<div class="inner_gnb">
-							<strong class="list_sub_title">스마트 컨텐츠 예약 관리</strong>
-							<ul class="list_sub">
-								<li class="item_sub">
-									<a href="#" class="link">예약 관리</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">이용자 현황</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">결제 현황 관리</a>
-								</li>
-							</ul><strong class="list_sub_title">스마트 클래스 예약 관리</strong>
-							<ul class="list_sub">
-								<li class="item_sub">
-									<a href="#" class="link">스마트 클래스 예약 관리</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">스마트 클래스 수강 현황</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">콘텐츠 관리</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">결제 현황 관리</a>
-								</li>
-							</ul><strong class="list_sub_title">동아리 예약 관리</strong>
-							<ul class="list_sub">
-								<li class="item_sub">
-									<a href="#" class="link">동아리 가입/탈퇴 신청</a>
-								</li>
-							</ul><strong class="list_sub_title">대관 예약 관리</strong>
-							<ul class="list_sub">
-								<li class="item_sub">
-									<a href="#" class="link">대관 예약 신청 관리</a>
-								</li>
-							</ul>
-						</div>
-					</li>
-					<li class="item_gnb">
-						<a href="#" class="btn_gnb">
-							<span class="material-icons">question_answer</span>커뮤니티 관리
-						</a>
-						<div class="inner_gnb">
-							<strong class="list_sub_title">공지 사항</strong>
-							<ul class="list_sub">
-								<li class="item_sub">
-									<a href="#" class="link">시스템/서비스 공지</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">강사 공지</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">회원 공지</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">뉴스</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">FAQ</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">이용안내</a>
-								</li>
-							</ul><strong class="list_sub_title">커뮤니티 게시판</strong>
-							<ul class="list_sub">
-								<li class="item_sub">
-									<a href="#" class="link">스마트 콘텐츠 게시판</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">스마트 클래스 게시판</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">동호회 게시판</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">대관 문의 게시판</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">쪽지 관리</a>
-								</li>
-							</ul><strong class="list_sub_title">평가 댓글 관리</strong>
-							<ul class="list_sub">
-								<li class="item_sub">
-									<a href="#" class="link">스마트 콘텐츠 평가</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">스마트 클래스 평가</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">강사 평가</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">수강생 평가</a>
-								</li>
-							</ul>
-						</div>
-					</li>
-					<li class="item_gnb">
-						<a href="#" class="btn_gnb">
-							<span class="material-icons">signal_cellular_alt</span>서비스 통계
-						</a>
-						<div class="inner_gnb">
-							<strong class="list_sub_title">사용자 이용 통계</strong>
-							<ul class="list_sub">
-								<li class="item_sub">
-									<a href="#" class="link">기관별 사용자 이용 통계</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">기간/시간대별 이용 통계</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">서비스별 이용 통계</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">서비스별 예약 통계</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">사용자 리포트</a>
-								</li>
-							</ul><strong class="list_sub_title">서비스 통계</strong>
-							<ul class="list_sub">
-								<li class="item_sub">
-									<a href="#" class="link">서비스별 통계</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">디바이스 관리 통계</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">공간 관리 통계</a>
-								</li>
-							</ul><strong class="list_sub_title">매출 통계</strong>
-							<ul class="list_sub">
-								<li class="item_sub">
-									<a href="#" class="link">기관별 매출 통계</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">기간/시간대별 매출 통계</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">서비스별 매출 통계</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">매출 리포트</a>
-								</li>
-							</ul>
-						</div>
-					</li>
-					<li class="item_gnb">
-						<a href="#" class="btn_gnb">
-							<span class="material-icons">settings</span>시스템 관리
-						</a>
-						<div class="inner_gnb">
-							<strong class="list_sub_title">기관 관리</strong>
-							<ul class="list_sub">
-								<li class="item_sub">
-									<a href="#" class="link">기관 현황</a>
-								</li>
-							</ul><strong class="list_sub_title">관리자 권한 관리</strong>
-							<ul class="list_sub">
-								<li class="item_sub">
-									<a href="#" class="link">관리자 현황</a>
-								</li>
-							</ul><strong class="list_sub_title">코드 관리</strong>
-							<ul class="list_sub">
-								<li class="item_sub">
-									<a href="#" class="link">카테고리 코드 관리</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">공간 코드 관리</a>
-								</li>
-								<li class="item_sub">
-									<a href="#" class="link">디바이스 코드 관리</a>
-								</li>
-							</ul>
-						</div>
-					</li>
+						</li>
+						<!-- [D] 알람이 있는 메뉴에 alert 클래스 추가해주세요. -->
+						<li class="item_gnb">
+							<a href="#" class="btn_gnb">
+								<span class="material-icons-outlined">account_box</span>
+								<strong class="txt_gnb">사용자 관리</strong>
+							</a>
+							<!-- [D] 알람이 있는 경우, 알람 갯수 표시 -->
+							<span class="alert_num">2</span>
+							<div class="inner_gnb">
+								<strong class="inner_gnb_txt">사용자 관리</strong>
+								<span class="list_sub_title">회원 관리</span>
+								<ul class="list_sub">
+									<!-- [D] 선택된 메뉴에 active 클래스 추가해주세요. -->
+									<!-- [D] 알람이 있는 메뉴에 alert 클래스 추가해주세요. -->
+									<li class="item_sub">
+										<a href="#" class="link">회원 현황</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">회원 가입 승인</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">화이트·블랙 리스트 관리</a>
+									</li>
+								</ul><span class="list_sub_title">강사 관리</span>
+								<ul class="list_sub">
+									<!-- [D] 선택된 메뉴에 active 클래스 추가해주세요. -->
+									<!-- [D] 알람이 있는 메뉴에 alert 클래스 추가해주세요. -->
+									<li class="item_sub">
+										<a href="#" class="link">강사 현황</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">평가 관리 현황</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<!-- [D] 알람이 있는 메뉴에 alert 클래스 추가해주세요. -->
+						<li class="item_gnb">
+							<a href="#" class="btn_gnb">
+								<span class="material-icons-outlined">local_activity</span>
+								<strong class="txt_gnb">서비스 관리</strong>
+							</a>
+							<!-- [D] 알람이 있는 경우, 알람 갯수 표시 -->
+							<span class="alert_num">2</span>
+							<div class="inner_gnb">
+								<strong class="inner_gnb_txt">서비스 관리</strong>
+								<span class="list_sub_title">스마트 컨텐츠 관리</span>
+								<ul class="list_sub">
+									<!-- [D] 선택된 메뉴에 active 클래스 추가해주세요. -->
+									<!-- [D] 알람이 있는 메뉴에 alert 클래스 추가해주세요. -->
+									<li class="item_sub">
+										<a href="#" class="link">스마트 콘텐츠 대시보드</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">스마트 콘텐츠 현황</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">콘텐츠 관리</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">디바이스 관리</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">공간 관리</a>
+									</li>
+								</ul><span class="list_sub_title">스마트 클래스 관리</span>
+								<ul class="list_sub">
+									<!-- [D] 선택된 메뉴에 active 클래스 추가해주세요. -->
+									<!-- [D] 알람이 있는 메뉴에 alert 클래스 추가해주세요. -->
+									<li class="item_sub">
+										<a href="#" class="link">스마트 클래스 대시보드</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">스마트 클래스 현황</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">클래스 실적 관리</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">디바이스 관리</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">공간 관리</a>
+									</li>
+								</ul><span class="list_sub_title">동아리 관리</span>
+								<ul class="list_sub">
+									<!-- [D] 선택된 메뉴에 active 클래스 추가해주세요. -->
+									<!-- [D] 알람이 있는 메뉴에 alert 클래스 추가해주세요. -->
+									<li class="item_sub">
+										<a href="#" class="link">동아리 현황</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">동아리 승인/폐지</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">동아리 관리</a>
+									</li>
+								</ul><span class="list_sub_title">대관 관리</span>
+								<ul class="list_sub">
+									<!-- [D] 선택된 메뉴에 active 클래스 추가해주세요. -->
+									<!-- [D] 알람이 있는 메뉴에 alert 클래스 추가해주세요. -->
+									<li class="item_sub">
+										<a href="#" class="link">대관 현황</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">대관 공간 관리</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<!-- [D] 알람이 있는 메뉴에 alert 클래스 추가해주세요. -->
+						<li class="item_gnb">
+							<a href="#" class="btn_gnb">
+								<span class="material-icons-outlined">card_membership</span>
+								<strong class="txt_gnb">예약 관리</strong>
+							</a>
+							<!-- [D] 알람이 있는 경우, 알람 갯수 표시 -->
+							<span class="alert_num">2</span>
+							<div class="inner_gnb">
+								<strong class="inner_gnb_txt">예약 관리</strong>
+								<span class="list_sub_title">스마트 컨텐츠 예약 관리</span>
+								<ul class="list_sub">
+									<!-- [D] 선택된 메뉴에 active 클래스 추가해주세요. -->
+									<!-- [D] 알람이 있는 메뉴에 alert 클래스 추가해주세요. -->
+									<li class="item_sub">
+										<a href="#" class="link">예약 관리</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">이용자 현황</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">결제 현황 관리</a>
+									</li>
+								</ul><span class="list_sub_title">스마트 클래스 예약 관리</span>
+								<ul class="list_sub">
+									<!-- [D] 선택된 메뉴에 active 클래스 추가해주세요. -->
+									<!-- [D] 알람이 있는 메뉴에 alert 클래스 추가해주세요. -->
+									<li class="item_sub">
+										<a href="#" class="link">스마트 클래스 예약 관리</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">스마트 클래스 수강 현황</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">콘텐츠 관리</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">결제 현황 관리</a>
+									</li>
+								</ul><span class="list_sub_title">동아리 예약 관리</span>
+								<ul class="list_sub">
+									<!-- [D] 선택된 메뉴에 active 클래스 추가해주세요. -->
+									<!-- [D] 알람이 있는 메뉴에 alert 클래스 추가해주세요. -->
+									<li class="item_sub">
+										<a href="#" class="link">동아리 가입/탈퇴 신청</a>
+									</li>
+								</ul><span class="list_sub_title">대관 예약 관리</span>
+								<ul class="list_sub">
+									<!-- [D] 선택된 메뉴에 active 클래스 추가해주세요. -->
+									<!-- [D] 알람이 있는 메뉴에 alert 클래스 추가해주세요. -->
+									<li class="item_sub">
+										<a href="#" class="link">대관 예약 신청 관리</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<!-- [D] 알람이 있는 메뉴에 alert 클래스 추가해주세요. -->
+						<li class="item_gnb">
+							<a href="#" class="btn_gnb">
+								<span class="material-icons-outlined">question_answer</span>
+								<strong class="txt_gnb">커뮤니티 관리</strong>
+							</a>
+							<!-- [D] 알람이 있는 경우, 알람 갯수 표시 -->
+							<span class="alert_num">2</span>
+							<div class="inner_gnb">
+								<strong class="inner_gnb_txt">커뮤니티 관리</strong>
+								<span class="list_sub_title">공지 사항</span>
+								<ul class="list_sub">
+									<!-- [D] 선택된 메뉴에 active 클래스 추가해주세요. -->
+									<!-- [D] 알람이 있는 메뉴에 alert 클래스 추가해주세요. -->
+									<li class="item_sub">
+										<a href="#" class="link">시스템/서비스 공지</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">강사 공지</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">회원 공지</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">뉴스</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">FAQ</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">이용안내</a>
+									</li>
+								</ul><span class="list_sub_title">커뮤니티 게시판</span>
+								<ul class="list_sub">
+									<!-- [D] 선택된 메뉴에 active 클래스 추가해주세요. -->
+									<!-- [D] 알람이 있는 메뉴에 alert 클래스 추가해주세요. -->
+									<li class="item_sub">
+										<a href="#" class="link">스마트 콘텐츠 게시판</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">스마트 클래스 게시판</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">동호회 게시판</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">대관 문의 게시판</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">쪽지 관리</a>
+									</li>
+								</ul><span class="list_sub_title">평가 댓글 관리</span>
+								<ul class="list_sub">
+									<!-- [D] 선택된 메뉴에 active 클래스 추가해주세요. -->
+									<!-- [D] 알람이 있는 메뉴에 alert 클래스 추가해주세요. -->
+									<li class="item_sub">
+										<a href="#" class="link">스마트 콘텐츠 평가</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">스마트 클래스 평가</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">강사 평가</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">수강생 평가</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<!-- [D] 알람이 있는 메뉴에 alert 클래스 추가해주세요. -->
+						<li class="item_gnb">
+							<a href="#" class="btn_gnb">
+								<span class="material-icons-outlined">analytics</span>
+								<strong class="txt_gnb">통계</strong>
+							</a>
+							<!-- [D] 알람이 있는 경우, 알람 갯수 표시 -->
+							<span class="alert_num">2</span>
+							<div class="inner_gnb">
+								<strong class="inner_gnb_txt">통계</strong>
+								<span class="list_sub_title">사용자 이용 통계</span>
+								<ul class="list_sub">
+									<!-- [D] 선택된 메뉴에 active 클래스 추가해주세요. -->
+									<!-- [D] 알람이 있는 메뉴에 alert 클래스 추가해주세요. -->
+									<li class="item_sub">
+										<a href="#" class="link">기관별 사용자 이용 통계</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">기간/시간대별 이용 통계</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">서비스별 이용 통계</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">서비스별 예약 통계</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">사용자 리포트</a>
+									</li>
+								</ul><span class="list_sub_title">서비스 통계</span>
+								<ul class="list_sub">
+									<!-- [D] 선택된 메뉴에 active 클래스 추가해주세요. -->
+									<!-- [D] 알람이 있는 메뉴에 alert 클래스 추가해주세요. -->
+									<li class="item_sub">
+										<a href="#" class="link">서비스별 통계</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">디바이스 관리 통계</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">공간 관리 통계</a>
+									</li>
+								</ul><span class="list_sub_title">매출 통계</span>
+								<ul class="list_sub">
+									<!-- [D] 선택된 메뉴에 active 클래스 추가해주세요. -->
+									<!-- [D] 알람이 있는 메뉴에 alert 클래스 추가해주세요. -->
+									<li class="item_sub">
+										<a href="#" class="link">기관별 매출 통계</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">기간/시간대별 매출 통계</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">서비스별 매출 통계</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">매출 리포트</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<!-- [D] 알람이 있는 메뉴에 alert 클래스 추가해주세요. -->
+						<li class="item_gnb">
+							<a href="#" class="btn_gnb">
+								<span class="material-icons-outlined">settings_system_daydream</span>
+								<strong class="txt_gnb">시스템 관리</strong>
+							</a>
+							<!-- [D] 알람이 있는 경우, 알람 갯수 표시 -->
+							<span class="alert_num">2</span>
+							<div class="inner_gnb">
+								<strong class="inner_gnb_txt">시스템 관리</strong>
+								<span class="list_sub_title">기관 관리</span>
+								<ul class="list_sub">
+									<!-- [D] 선택된 메뉴에 active 클래스 추가해주세요. -->
+									<!-- [D] 알람이 있는 메뉴에 alert 클래스 추가해주세요. -->
+									<li class="item_sub">
+										<a href="#" class="link">기관 현황</a>
+									</li>
+								</ul><span class="list_sub_title">관리자 권한 관리</span>
+								<ul class="list_sub">
+									<!-- [D] 선택된 메뉴에 active 클래스 추가해주세요. -->
+									<!-- [D] 알람이 있는 메뉴에 alert 클래스 추가해주세요. -->
+									<li class="item_sub">
+										<a href="#" class="link">관리자 현황</a>
+									</li>
+								</ul><span class="list_sub_title">코드 관리</span>
+								<ul class="list_sub">
+									<!-- [D] 선택된 메뉴에 active 클래스 추가해주세요. -->
+									<!-- [D] 알람이 있는 메뉴에 alert 클래스 추가해주세요. -->
+									<li class="item_sub">
+										<a href="#" class="link">카테고리 코드 관리</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">공간 코드 관리</a>
+									</li>
+									<li class="item_sub">
+										<a href="#" class="link">디바이스 코드 관리</a>
+									</li>
+								</ul>
+							</div>
+						</li>
 
-				</ul>
+					</ul>
+				</div>
 			</nav>
 			<section class="content">
 

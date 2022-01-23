@@ -1,13 +1,14 @@
 .wrap_table {
     table {
         width: 100%;
-        border: 1px solid $gray_40;
+        background-color: #fff;
+        border: 1px solid $table_border;
         border-collapse: collapse;
         table-layout: fixed;
         font-size: 13px;
 
         th, td {
-            border: 1px solid $gray_40;
+            border: 1px solid $table_border;
             padding: 10px 5px;
             height: 10px;
             text-align: center;
@@ -15,14 +16,35 @@
             text-overflow: ellipsis;
             white-space: nowrap;
         }
+
+        th {
+            background-color: $table_title_cell;
+            font-weight: bold;
+        }
+
+        tr.on {
+            td:first-child {
+                position: relative;
+            
+                &::before {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    width: 4px;
+                    background-color: $deep_blue;
+                    content: '';
+                }
+            }
+            
+            td {
+                background-color: $table_select_cell;
+            }
+        }
     }
 
     table.smart_content_board {
         margin-top: 5px;
-
-        th {
-            background-color: $gray_80;
-        }
 
         td:nth-of-type(6) {
             text-align: left;
@@ -31,11 +53,6 @@
 
     table.smart_content_list {
         font-size: 12px;
-
-        th {
-            background-color: $gray_80;
-            color: $blue_40;
-        }
 
         .label_status {
             display: inline-block;
@@ -96,29 +113,12 @@
             }
 
             .add {
-                background-color: $blue_40;
+                background-color: $blue;
             }
         }
     }
 
     .class_teaching_list {
         font-size: 12px;
-
-        th {
-            background-color: #dfdfdf;
-            color: $blue_40;
-        }
-    }
-
-    .typeA {
-        tbody tr.on {
-            background-color: $red_80;
-        }
-    }
-
-    .typeB {
-        tbody tr.on {
-            background-color: $blue_60;
-        }
     }
 }

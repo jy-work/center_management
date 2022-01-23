@@ -1,11 +1,11 @@
 {% set navList = [
     {
-        menu: "홈",
-        icon: "home",
+        menu: "운영 상황판",
+        icon: "grid_view",
         subList: ""
     }, {
         menu: "사용자 관리",
-        icon: "person",
+        icon: "account_box",
         subList: [
             {
                 title: "회원 관리",
@@ -36,7 +36,7 @@
         ]
     }, {
         menu: "서비스 관리",
-        icon: "assignment_turned_in",
+        icon: "local_activity",
         subList: [
             {
                 title: "스마트 컨텐츠 관리",
@@ -107,7 +107,7 @@
         ]
     }, {
         menu: "예약 관리",
-        icon: "event_available",
+        icon: "card_membership",
         subList: [
             {
                 title: "스마트 컨텐츠 예약 관리",
@@ -225,8 +225,8 @@
             }
         ]
     }, {
-        menu: "서비스 통계",
-        icon: "signal_cellular_alt",
+        menu: "통계",
+        icon: "analytics",
         subList: [
             {
                 title: "사용자 이용 통계",
@@ -283,7 +283,7 @@
         ]
     }, {
         menu: "시스템 관리",
-        icon: "settings",
+        icon: "settings_system_daydream",
         subList: [
             {
                 title: "기관 관리",
@@ -322,20 +322,27 @@
 
 {%- macro nav_list(items) %}
     {% for item in items -%}
+        <!-- [D] 알람이 있는 메뉴에 alert 클래스 추가해주세요. -->
         <li class="item_gnb">
             <a href="#" class="btn_gnb">
-                <span class="material-icons">{{ item.icon }}</span>{{item.menu}}
+                <span class="material-icons-outlined">{{ item.icon }}</span>
+                <strong class="txt_gnb">{{item.menu}}</strong>
             </a>
+            <!-- [D] 알람이 있는 경우, 알람 갯수 표시 -->
+            <span class="alert_num">2</span>
             {% if item.subList=="" -%}
             {%- else -%}
             <div class="inner_gnb">
+                <strong class="inner_gnb_txt">{{item.menu}}</strong>
                 {% for subitem in item.subList -%}
-                    <strong class="list_sub_title">{{ subitem.title }}</strong>
+                    <span class="list_sub_title">{{ subitem.title }}</span>
                     <ul class="list_sub">
+                        <!-- [D] 선택된 메뉴에 active 클래스 추가해주세요. -->
+                        <!-- [D] 알람이 있는 메뉴에 alert 클래스 추가해주세요. -->
                         {% for content in subitem.content -%}
-                            <li class="item_sub">
-                                <a href="{{content.link}}" class="link">{{ content.text }}</a>
-                            </li>
+                        <li class="item_sub">
+                            <a href="{{content.link}}" class="link">{{ content.text }}</a>
+                        </li> 
                         {%- endfor %}
                     </ul>
                 {%- endfor %}
@@ -345,6 +352,8 @@
     {% endfor%}
 {% endmacro -%}
 
-<ul class="list_gnb">
-    {{- nav_list(navList) -}}
-</ul>
+<div class="wrap_gnb">
+    <ul class="list_gnb">
+        {{- nav_list(navList) -}}
+    </ul>
+</div>

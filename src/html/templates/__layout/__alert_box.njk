@@ -1,0 +1,17 @@
+<div class="box_alert on">
+    <button type="button" class="btn_open_alert"><span class="blind">알림창</span></button>
+    <div class="wrap_alert">
+        {% for i in range(1, 5) -%}
+        <a href="#" class="item_alert">
+            링크형 알림 클릭 클릭
+        </a>
+        <div class="item_alert">
+            확인형 알림 클릭 안됨
+        </div>
+        <div class="item_alert">
+            내용이 길어진다아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아
+        </div>
+        {% endfor %}
+    </div>
+    <button class="btn_reset" type="button">전체 지우기</button>
+</div>

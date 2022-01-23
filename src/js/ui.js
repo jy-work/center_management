@@ -1,5 +1,30 @@
 $(document).ready(function(){
 
+    // nav 메뉴 열고 닫기
+    const btnMenu = $("header .btn_menu");
+    const gnb = $("nav");
+    btnMenu.click(function() {
+        return [$(this).hasClass("fold") == true ? $(this).removeClass("fold") : $(this).addClass("fold"), $(gnb).hasClass("fold") == true ? $(gnb).removeClass("fold") : $(gnb).addClass("fold")];
+    })
+
+    // nav gnb 메뉴 알림 사전 설정
+    const gnbAlertItem = $(".item_gnb:nth-child(3)");
+    $(gnbAlertItem).addClass("alert");
+    $(gnbAlertItem).find(".alert_num").addClass("on");
+    $(gnbAlertItem).find(".list_sub:first .item_sub:nth-child(2), .list_sub:first .item_sub:nth-child(3)").addClass("alert");
+
+    // 오른쪽 알림창
+    const boxAlert = $(".box_alert");
+    const boxAlertBtn = $(".box_alert .btn_open_alert");
+    const boxAlertHeaderBtn = $(".tool_box .btn_alert");
+    boxAlertBtn.click(function() {
+        return $(boxAlert).hasClass("on") == true ? $(boxAlert).removeClass("on") : $(boxAlert).addClass("on");
+    })
+
+    boxAlertHeaderBtn.click(function() {
+        return $(boxAlert).hasClass("on") == true ? $(boxAlert).removeClass("on") : $(boxAlert).addClass("on");
+    })
+
     // 테이블 선택 시, on 클래스 추가하여 선택 표시
     const tableRow = $("table tr");
 

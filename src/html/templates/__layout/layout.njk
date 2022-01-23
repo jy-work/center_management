@@ -5,8 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block pageTitle %}{% endblock %}</title>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="./../../style/css/style.css">
         <style>
         {% block style %}
@@ -16,8 +15,10 @@
     <body>
         <div class="wrap">
             {%- include "./__header.njk" -%}
+            {%- include "./__alert_box.njk" -%}
             <div class="container">
-                <nav>
+                <!-- [D] 접힌 nav는 fold 클래스 추가해주세요. -->
+                <nav class="">
                     {%- include "./__nav.njk"%}
                 </nav>
                 <section class="content">

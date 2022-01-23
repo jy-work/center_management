@@ -13,16 +13,16 @@
         > li {
             margin: 0 2px;
             .link:hover {
-                background-color: $blue_40;
-                border-color: $blue_40;
+                background-color: $blue;
+                border-color: $blue;
                 color: #fff;
             }
         }
 
         > li.current {
             .link {
-                background-color: $blue_40;
-                border-color: $blue_40;
+                background-color: $blue;
+                border-color: $blue;
                 color: #fff;
             }
         }
@@ -34,13 +34,13 @@
             border: 1px solid #ccc;
             vertical-align: top;
 
-            .material-icons {
+            .material-icons-outlined {
                 font-size: 12px;
             }
         }
 
         .first, .prev, .next, .last {
-            .link .material-icons {
+            .link .material-icons-outlined {
                 font-size: 20px;
                 line-height: 25px;
             }

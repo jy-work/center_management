@@ -1,10 +1,11 @@
 header {
     position: fixed;
+    display: flex;
     top: 0;
     left: 0;
     right: 0;
     height: 60px;
-    padding: 0 20px;
+    padding: 0 20px 0 60px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(170, 170, 170, 0.35);
     z-index: 100;
@@ -17,6 +18,91 @@ header {
             height: 50px;
             background-repeat: no-repeat;
             background-size: contain;
+        }
+    }
+
+    .btn_menu {
+        position: absolute;
+        bottom: 10px;
+        left: 20px;
+        width: 24px;
+        height: 24px;
+        background: url("../../../img/icon_menu_open.png") no-repeat;
+        border: 0;
+        content: "";
+
+        &.fold {
+            background-image: url("../../../img/icon_menu.png");
+        }
+    }
+
+    .header_profile {
+        border-left: 1px solid $gray_80;
+        margin: 10px 0 10px 30px;
+        padding-left: 20px;
+
+        img {
+            float: left;
+            border-radius: 50%;
+        }
+
+        .info {
+            overflow: hidden;
+            padding-left: 20px;
+
+            .name {
+                color: $yellow;
+                font-weight: bold;
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: 6px;
+            }
+
+            .group {
+                font-size: 12px;
+                line-height: 18px;
+                vertical-align: top;
+            }
+        }
+    }
+
+    .tool_box {
+        margin: 20px 0 0 auto;
+
+        > a, .btn_alert {
+            position: relative;
+            display: inline-block;
+            color: #606060;
+            padding: 4px;
+            width: 28px;
+            height: 28px;
+            text-align: center;
+            vertical-align: top;
+            line-height: 28px;
+            box-sizing: border-box;
+            
+            .material-icons-outlined {
+                font-size: 22px;
+                vertical-align: top;
+            }
+        }
+
+        .btn_alert {
+            margin-left: 20px;
+            border: 0;
+        }
+
+        a.on, .btn_alert.on {
+            &::after{ 
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background-color: $pink;
+                content: '';
+            }
         }
     }
 }

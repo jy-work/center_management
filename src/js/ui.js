@@ -51,4 +51,13 @@ $(document).ready(function(){
         }
         $(this).siblings(".file_name").text(filename).css("color", "#333");
     });
+
+    // 좁은 nav 시, 메뉴 확장 시 on 클래스 추가(hover 한계)
+    $("nav .item_gnb").mouseover(function(){
+        $(this).addClass("on");
+    });
+
+    $("nav .item_gnb").mouseleave(function(){
+        $(this).removeClass("on");
+    });
  });

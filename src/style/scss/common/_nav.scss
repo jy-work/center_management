@@ -20,12 +20,12 @@ nav {
         position: relative;
         padding-right: 60px;
 
-        &:hover, &.active {
+        &:hover, &.active, &.on {
 
             .inner_gnb {
-                max-height: 1000px;
+                max-height: 700px;
                 opacity: 1;
-                transform: scale(1);
+                visibility: visible;
                 background-color: $gray;
             }
 
@@ -50,7 +50,7 @@ nav {
             height: 50px;
             line-height: 50px;
             white-space: nowrap;
-            transition: background-color 0.3s;
+            transition: all 0.8s;
             
             .material-icons-outlined {
                 margin: 13px 10px 0 0;
@@ -91,9 +91,9 @@ nav {
 .inner_gnb {
     max-height: 0;
     opacity: 0;
-    transform: scale(0);
+    visibility: hidden;
     line-height: 22px;
-    transition: max-height 0.3s, opacity 0.3s;
+    transition: max-height 0.8s, opacity 0.8s, visibility 0.8s;
 
     .inner_gnb_txt {
         display: none;
@@ -160,6 +160,7 @@ nav.fold {
         font-size: 11px;
         line-height: 15px;
         z-index: 100;
+        transition: all 0s;
 
         .inner_gnb_txt {
             display: block;

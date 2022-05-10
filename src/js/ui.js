@@ -60,4 +60,16 @@ $(document).ready(function(){
     $("nav .item_gnb").mouseleave(function(){
         $(this).removeClass("on");
     });
+
+    // 알림 제거
+    const alertItem = $(".item_alert");
+    const alertItemRemoveBtn = $(".item_alert_close");
+    const alertRemoveAllBtn = $(".btn_reset");
+    alertItemRemoveBtn.click(function() {
+        $(this).parent(alertItem).remove();
+    })
+    alertRemoveAllBtn.click(function() {
+        $(this).siblings(".wrap_alert").find(alertItem).remove();
+    })
+
  });

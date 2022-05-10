@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>스마트 콘텐츠 현황</title>
 	<link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="./../../suite_7.3.0_individual/codebase/suite.css">
 	<link rel="stylesheet" type="text/css" href="./../../style/css/style.css">
 	<style>
 
@@ -42,41 +43,121 @@
 		<div class="box_alert on">
 			<button type="button" class="btn_open_alert"><span class="blind">알림창</span></button>
 			<div class="wrap_alert">
-				<a href="#" class="item_alert">
-					링크형 알림 클릭 클릭
-				</a>
 				<div class="item_alert">
-					확인형 알림 클릭 안됨
+					<a href="#" class="item_alert_link">
+						<strong class="item_alert_title">[평생 교육 신규제안]</strong>
+						<p class="item_alert_content"><em>김기태</em> 님이 평생교육 강의를 신규 제안하였습니다.</p>
+					</a>
+					<button type="button" class="item_alert_close">
+						<span class="blind">닫기</span>
+						<span class="material-icons-outlined" aria-hidden="true">close</span>
+					</button>
 				</div>
 				<div class="item_alert">
-					내용이 길어진다아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아
-				</div>
-				<a href="#" class="item_alert">
-					링크형 알림 클릭 클릭
-				</a>
-				<div class="item_alert">
-					확인형 알림 클릭 안됨
-				</div>
-				<div class="item_alert">
-					내용이 길어진다아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아
-				</div>
-				<a href="#" class="item_alert">
-					링크형 알림 클릭 클릭
-				</a>
-				<div class="item_alert">
-					확인형 알림 클릭 안됨
+					<a href="#" class="item_alert_link">
+						<strong class="item_alert_title">[1:1 문의]</strong>
+						<p class="item_alert_content"><em>홍길동</em> 님이 1:1 문의 내용을 남겼습니다. 최대 7줄까지 보여질 수 있게 하였습니다. 가공된 데이터가 들어오는지, 혹은 보내주신 예제처럼 제목과 내용이 구분 가능하게 퍼블을 진행해야 하는지 알려주시면 수정해서 재전달 드리겠습니다. em 태그 안에 적으면 밑줄이 나타납니다.</p>
+					</a>
+					<button type="button" class="item_alert_close">
+						<span class="blind">닫기</span>
+						<span class="material-icons-outlined" aria-hidden="true">close</span>
+					</button>
 				</div>
 				<div class="item_alert">
-					내용이 길어진다아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아
+					<strong class="item_alert_title">[관리자 안내]</strong>
+					<p class="item_alert_content"><em>a태그</em> 안에 내용을 작성하면 링크가 있는 게시글로 이동하게 되고 이렇게 <em>a태그</em> 없이 작성하면 링크는 없는 일반 알림 형태로 나타납니다.</p>
+					<button type="button" class="item_alert_close">
+						<span class="blind">닫기</span>
+						<span class="material-icons-outlined" aria-hidden="true">close</span>
+					</button>
 				</div>
-				<a href="#" class="item_alert">
-					링크형 알림 클릭 클릭
-				</a>
 				<div class="item_alert">
-					확인형 알림 클릭 안됨
+					<a href="#" class="item_alert_link">
+						<strong class="item_alert_title">[1:1 문의]</strong>
+						<p class="item_alert_content"><em>em 태그</em> 안에 내용을 입력하면 밑줄이 나타납니다. 참고해주세요.</p>
+					</a>
+					<button type="button" class="item_alert_close">
+						<span class="blind">닫기</span>
+						<span class="material-icons-outlined" aria-hidden="true">close</span>
+					</button>
 				</div>
 				<div class="item_alert">
-					내용이 길어진다아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아
+					<a href="#" class="item_alert_link">
+						<strong class="item_alert_title">[제목도 말줄임이 되게 해두기]</strong>
+						<p class="item_alert_content"><em>닫기</em> 버튼으로 움직이는 현재 알림창 움직임은 제가 jquery로 임시로 작성해둔 것이여서 불필요하다면 ui.js 에서 제거 해주시면 됩니다. (ui.js 파일 주석 -알림 제거- 참고)</p>
+					</a>
+					<button type="button" class="item_alert_close">
+						<span class="blind">닫기</span>
+						<span class="material-icons-outlined" aria-hidden="true">close</span>
+					</button>
+				</div>
+				<div class="item_alert">
+					<a href="#" class="item_alert_link">
+						<strong class="item_alert_title">[안내글 안내글]</strong>
+						<p class="item_alert_content"><em>스크롤</em>은 글이 넘치지 않아도 나타나게 하였습니다.</p>
+					</a>
+					<button type="button" class="item_alert_close">
+						<span class="blind">닫기</span>
+						<span class="material-icons-outlined" aria-hidden="true">close</span>
+					</button>
+				</div>
+				<div class="item_alert">
+					<a href="#" class="item_alert_link">
+						<strong class="item_alert_title">[평생 교육 신규제안]</strong>
+						<p class="item_alert_content"><em>김기태</em> 님이 평생교육 강의를 신규 제안하였습니다.</p>
+					</a>
+					<button type="button" class="item_alert_close">
+						<span class="blind">닫기</span>
+						<span class="material-icons-outlined" aria-hidden="true">close</span>
+					</button>
+				</div>
+				<div class="item_alert">
+					<a href="#" class="item_alert_link">
+						<strong class="item_alert_title">[1:1 문의]</strong>
+						<p class="item_alert_content"><em>홍길동</em> 님이 1:1 문의 내용을 남겼습니다. 최대 7줄까지 보여질 수 있게 하였습니다. 가공된 데이터가 들어오는지, 혹은 보내주신 예제처럼 제목과 내용이 구분 가능하게 퍼블을 진행해야 하는지 알려주시면 수정해서 재전달 드리겠습니다. em 태그 안에 적으면 밑줄이 나타납니다.</p>
+					</a>
+					<button type="button" class="item_alert_close">
+						<span class="blind">닫기</span>
+						<span class="material-icons-outlined" aria-hidden="true">close</span>
+					</button>
+				</div>
+				<div class="item_alert">
+					<strong class="item_alert_title">[관리자 안내]</strong>
+					<p class="item_alert_content"><em>a태그</em> 안에 내용을 작성하면 링크가 있는 게시글로 이동하게 되고 이렇게 <em>a태그</em> 없이 작성하면 링크는 없는 일반 알림 형태로 나타납니다.</p>
+					<button type="button" class="item_alert_close">
+						<span class="blind">닫기</span>
+						<span class="material-icons-outlined" aria-hidden="true">close</span>
+					</button>
+				</div>
+				<div class="item_alert">
+					<a href="#" class="item_alert_link">
+						<strong class="item_alert_title">[1:1 문의]</strong>
+						<p class="item_alert_content"><em>em 태그</em> 안에 내용을 입력하면 밑줄이 나타납니다. 참고해주세요.</p>
+					</a>
+					<button type="button" class="item_alert_close">
+						<span class="blind">닫기</span>
+						<span class="material-icons-outlined" aria-hidden="true">close</span>
+					</button>
+				</div>
+				<div class="item_alert">
+					<a href="#" class="item_alert_link">
+						<strong class="item_alert_title">[제목도 말줄임이 되게 해두기]</strong>
+						<p class="item_alert_content"><em>닫기</em> 버튼으로 움직이는 현재 알림창 움직임은 제가 jquery로 임시로 작성해둔 것이여서 불필요하다면 ui.js 에서 제거 해주시면 됩니다. (ui.js 파일 주석 -알림 제거- 참고)</p>
+					</a>
+					<button type="button" class="item_alert_close">
+						<span class="blind">닫기</span>
+						<span class="material-icons-outlined" aria-hidden="true">close</span>
+					</button>
+				</div>
+				<div class="item_alert">
+					<a href="#" class="item_alert_link">
+						<strong class="item_alert_title">[안내글 안내글]</strong>
+						<p class="item_alert_content"><em>스크롤</em>은 글이 넘치지 않아도 나타나게 하였습니다.</p>
+					</a>
+					<button type="button" class="item_alert_close">
+						<span class="blind">닫기</span>
+						<span class="material-icons-outlined" aria-hidden="true">close</span>
+					</button>
 				</div>
 
 			</div>
